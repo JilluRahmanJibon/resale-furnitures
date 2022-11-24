@@ -11,7 +11,6 @@ const HomeCategories = () => {
             console.log(error);
         })
     }, [])
-    console.log(categories);
     return (
         <div className='pb-12 border-y pt-5 border-gray-300'>
             <h1 className='sm:text-3xl text-xl font-bold pl-2 pb-5 '>Top Categories</h1>
