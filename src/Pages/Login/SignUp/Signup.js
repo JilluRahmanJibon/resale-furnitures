@@ -13,11 +13,7 @@ const SignUp = () => {
 	// show password state
 	const [show, setShow] = useState(false);
 	const [showPassword, setShowPassword] = useState("password");
-	// user info state
-	const [userInfo, setUserInfo] = useState({
-		email: "",
-		password: "",
-	});
+
 	// firebase error state
 	const [firebaseError, setFirebaseError] = useState('');
 	const {
@@ -77,6 +73,7 @@ const SignUp = () => {
 			}
 		})
 	};
+
 	useTitle("Sign Up");
 	return (
 		<div>
@@ -202,17 +199,18 @@ const SignUp = () => {
 										htmlFor="photo"
 										className="bg-gray-50 border border-gray-300 text-gray-900 flex-col  flex items-center font-bold  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600   w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
-										<input
-											type="file"
-											name="image"
-											accept="image/*"
-											id="photo"
-											hidden
-											{...register("image", { required: "Photo is required" })} />
-										<RiImageAddFill className="w-7 h-7" />
-										<h1>Upload Image </h1>
+
+										{<><RiImageAddFill className="w-7 h-7" />
+											<h1>Upload Image </h1></>}
 
 									</label>
+									<input
+										type="file"
+										name="image"
+										accept="image/*"
+										id="photo"
+
+										{...register("image", { required: "Photo is required" })} />
 									{errors.image && (
 										<p className="text-red-500 font-semibold flex items-center gap-1 mt-1">
 											<FaTimes />	{errors.image?.message}
