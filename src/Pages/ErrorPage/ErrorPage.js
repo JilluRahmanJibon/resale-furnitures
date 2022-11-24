@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
+	const errors = useRouteError()
+	console.log(errors);
 	return (
 		<div
 			className="

@@ -13,7 +13,6 @@ const CategoryCard = ({ category }) => {
                         <h2 className="text-3xl text-center uppercase font-semibold tracking-wide">{categoryName}</h2></Link>
 
                 </div>
-
             </div>
         </div>
     );
