@@ -1,10 +1,10 @@
-# FOOD & MASTY
+# BengalFurniture
 
 # Welcome to Our FOOD&MASTY Portfolio
 
-## FOOD MASTY Live WebSite Link: https://food-review-a613a.web.app
+## BengalFurniture Live WebSite Link: https://food-review-a613a.web.app
 
-FOOD & MASTY is a cloud-enabled, mobile-ready
+BengalFurniture is a cloud-enabled, mobile-ready
 In this website ReactJS-powered Tailwind Css are used.
 
 - Click On THE LINK
@@ -43,7 +43,7 @@ Just Click the link 👉 https://food-review-a613a.web.app .
 
 ## Installation
 
-FOOD & MASTY requires [Node.js](https://nodejs.org/) , React Js , Router, React-Icons to run.
+BengalFurniture requires [Node.js](https://nodejs.org/) , React Js , Router, React-Icons to run.
 
 Install the dependencies and devDependencies and start the server.
 
