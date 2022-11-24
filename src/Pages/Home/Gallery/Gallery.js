@@ -12,7 +12,7 @@ const Gallery = () => {
     const images = [{ img: img1 }, { img: img2 }, { img: img3 }, { img: img4 }, { img: img6 }, { img: img5 }, { img: img7 }, { img: img8 },]
     return (
         <section>
-            <h1 className='sm:text-3xl text-xl font-semibold pl-5 pb-2'>Gallery</h1>
+            <h1 className='sm:text-3xl text-xl font-semibold pl-4 pb-2'>Gallery</h1>
             <div className="container grid grid-cols-2 gap-4 p-4 pb-0 mx-auto md:grid-cols-4">
                 {
                     images.map(image => <>

@@ -3,9 +3,11 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import logo from '../../../Pages/assets/logo.png'
+import person from '../../../Pages/assets/icons/person.svg'
 const Navbar = () => {
 	const { user, userLogOut } = useContext(AuthContext);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 	return (
 		<div>
 			<div className="">
@@ -131,15 +133,18 @@ const Navbar = () => {
 														</button>
 													</li>
 												) : (
-													<li>
-														<Link
-															to="/signin"
-															className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-															aria-label="Sign up"
-															title="Sign up">
-															Sign In
-														</Link>
-													</li>
+													<>
+														<li>
+															<Link
+																to="/signin"
+																className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+																aria-label="Sign up"
+																title="Sign up">
+																Sign In
+															</Link>
+														</li>
+
+													</>
 												)}
 											</ul>
 										</nav>
@@ -166,15 +171,18 @@ const Navbar = () => {
 									</div>
 								</div>
 							) : (
-								<li>
-									<NavLink
-										to="signin"
-										className="inline-flex hidden lg:block items-center justify-center py-2 font-semibold px-6 tracking-wide transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-										aria-label="Sign In"
-										title="Sign In">
-										Sign In
-									</NavLink>
-								</li>
+								<>
+									<li>
+										<NavLink
+											to="signin"
+											className="inline-flex hidden lg:block items-center justify-center py-2 font-semibold px-6 tracking-wide transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+											aria-label="Sign In"
+											title="Sign In">
+											Sign In
+										</NavLink>
+									</li>
+									<img className="sm:w-12  sm:h-12 w-10 h-10" src={person} alt="" />
+								</>
 							)}
 						</ul>
 					</div>
