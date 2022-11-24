@@ -18,7 +18,7 @@ const Navbar = () => {
 								title="Bengal Furniture"
 								className="inline-flex items-center">
 								<img className="sm:w-10 w-8" src={logo} alt="" />
-								<span className="ml-2 sm:block hidden sm:text-xl font-bold tracking-wide uppercase">
+								<span className="ml-2 sm:block hidden sm:text-xl font-bold tracking-wide">
 									BengalFurniture
 								</span>
 							</Link>

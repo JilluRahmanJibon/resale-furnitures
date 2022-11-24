@@ -7,15 +7,14 @@ const Footer = () => {
 		<div className="">
 			<footer className="px-4 divide-y  ">
 				<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
-					<div className="lg:w-1/3">
-						<Link title="Home"
+					<div className="lg:w-1/3 flex justify-center">
+						<Link
 							to="/"
-							rel="noopener noreferrer"
-							className="flex justify-center space-x-3 lg:justify-start">
-							<div className="flex items-center justify-center w-12 h-12 rounded-full ">
-								<img src={logo} alt="" />
-							</div>
-							<span className="self-center text-xl sm:text-2xl font-semibold">
+							aria-label="Bengal Furniture"
+							title="Bengal Furniture"
+							className="inline-flex items-center">
+							<img className="sm:w-10 w-8" src={logo} alt="" />
+							<span className="ml-2 sm:text-2xl text-md font-bold tracking-wide">
 								BengalFurniture
 							</span>
 						</Link>

@@ -1,8 +1,8 @@
 # BengalFurniture
 
-# Welcome to Our FOOD&MASTY Portfolio
+# Welcome to Our BengalFurniture eCommerce Website
 
-## BengalFurniture Live WebSite Link: https://food-review-a613a.web.app
+## BengalFurniture Live WebSite Link: https://regal-furniture-ab3ef.web.app
 
 BengalFurniture is a cloud-enabled, mobile-ready
 In this website ReactJS-powered Tailwind Css are used.
@@ -37,7 +37,7 @@ Dev Goal: Review...
 
 ## How To Use
 
-Just Click the link 👉 https://food-review-a613a.web.app .
+Just Click the link 👉 https://regal-furniture-ab3ef.web.app .
 
 ---
 
