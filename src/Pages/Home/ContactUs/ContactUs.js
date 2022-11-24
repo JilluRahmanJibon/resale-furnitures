@@ -12,16 +12,16 @@ const ContactUs = () => {
             </div>
             <form className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div>
-                    <label for="name" className="text-sm text-gray-800 font-semibold">Full name</label>
+                    <label htmlFor="name" className="text-sm text-gray-800 font-semibold">Full name</label>
                     <input id="name" type="text" placeholder="Your Name" required className="w-full input input-bordered  p-3 rounded " />
                 </div>
                 <div>
-                    <label for="email" className="text-sm text-gray-800 font-semibold">Email</label>
+                    <label htmlFor="email" className="text-sm text-gray-800 font-semibold">Email</label>
                     <input id="email" type="email" required placeholder="Your Email" className="w-full input input-bordered  p-3 rounded " />
                 </div>
                 <div>
-                    <label for="message" className="text-sm text-gray-800 font-semibold">Message</label>
-                    <textarea id="message" required rows="3" className="w-full textarea textarea-bordered p-3 rounded " placeholder='Say somethings.....' spellcheck="false"></textarea>
+                    <label htmlFor="message" className="text-sm text-gray-800 font-semibold">Message</label>
+                    <textarea id="message" required rows="3" className="w-full textarea textarea-bordered p-3 rounded " placeholder='Say somethings.....' spellCheck="false"></textarea>
                 </div>
                 <button type="submit" className="w-full input input-bordered  p-3 text-sm text-gray-800 font font-semibold tracking-wide uppercase rounded dark:bg-violet-400 dark:text-gray-900">Send Message</button>
             </form>
