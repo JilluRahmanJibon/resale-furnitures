@@ -11,10 +11,10 @@ const FurnitureCard = ({ furniture }) => {
                 </Link>
                 <p className='pl-2'>Capacity: {capacity}</p>
                 <div className="flex flex-col justify-between p-6 space-y-8">
-                    <div className="space-y-2">
+                    <div className="flex justify-center space-y-2">
 
                         <Link to={`/furnitures/${''}`}>
-                            <h2 className="text-2xl text-center uppercase font-semibold tracking-wide">{name}</h2></Link>
+                            <button className="text-lg bg-gray-800 py-2 px-4 rounded-lg hover:bg-gray-700 transition-all text-center font-semibold tracking-wide">More Info</button></Link>
 
                     </div>
 
