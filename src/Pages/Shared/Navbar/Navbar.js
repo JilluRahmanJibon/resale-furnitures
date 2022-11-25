@@ -7,12 +7,13 @@ import person from '../../../Pages/assets/icons/person.svg'
 const Navbar = () => {
 	const { user, userLogOut } = useContext(AuthContext);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+	const [dashboardOpen, setDashboardOpen] = useState(false)
 	return (
 		<div>
 			<div className="">
-				<div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-					<div className="relative flex items-center justify-between">
+				<div className="px-4 py-5 mx-auto  md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+					<div className="relative flex items-center gap-3 justify-between">
+						<label onClick={() => setDashboardOpen(!dashboardOpen)} htmlFor="dashboard-drawer" className=" lg:hidden">{dashboardOpen ? <FaTimes className="text-xl mb-1" /> : <FaBars className="text-xl mb-1" />}</label>
 						<div className="lg:w-0 w-full">
 							<Link
 								to="/"
@@ -54,6 +55,19 @@ const Navbar = () => {
 									Blog
 								</NavLink>
 							</li>
+							<li>
+								<NavLink
+									to="/dashboard"
+									aria-label="Dashboard"
+									title="Dashboard"
+									className={({ isActive }) =>
+										isActive
+											? "font-medium tracking-wide text-red-400  transition-colors duration-200 hover:text-teal-accent-400"
+											: "font-medium tracking-wide transition-colors duration-200 hover:text-teal-accent-400"
+									}>
+									Dashboard
+								</NavLink>
+							</li>
 						</ul>
 
 						<div className="lg:hidden z-50 mr-3">
@@ -62,13 +76,16 @@ const Navbar = () => {
 								title="Open Menu"
 								className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
 								onClick={() => setIsMenuOpen(true)}>
-								<FaBars />
+								<FaBars className="text-lg " />
 							</button>
 							{isMenuOpen && (
 								<div className="absolute top-0 left-0 w-full">
+
 									<div className="p-5 bg-white border rounded shadow-sm">
 										<div className="flex items-center justify-between mb-4">
+
 											<div>
+
 												<Link
 													to=""
 													aria-label="Bengal Furniture"
@@ -76,8 +93,9 @@ const Navbar = () => {
 													className="inline-flex items-center">
 													{" "}
 													<img className="w-10" src={logo} alt="" />
-													<span className="ml-2 text-xl font-bold tracking-wide uppercase">
+													<span className="ml-2 sm:text-xl font-bold tracking-wide uppercase">
 														Bengal Furniture
+
 													</span>
 												</Link>
 											</div>
@@ -119,6 +137,20 @@ const Navbar = () => {
 																: "font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
 														}>
 														Blog
+													</NavLink>
+												</li>
+
+												<li>
+													<NavLink
+														to="/dashboard"
+														aria-label="Dashboard"
+														title="Dashboard"
+														className={({ isActive }) =>
+															isActive
+																? "font-medium tracking-wide text-red-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
+																: "font-medium tracking-wide transition-colors duration-200 hover:text-deep-purple-accent-400"
+														}>
+														Dashboard
 													</NavLink>
 												</li>
 
