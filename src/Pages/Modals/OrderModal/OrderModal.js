@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const OrderModal = ({ selectOrder, setSelectOrder }) => {
     const { user } = useContext(AuthContext)
-    const { name: productName, picture, reSalePrice, sellerEmail, sellerImage, sellerName, _id } = selectOrder
+    const { name: productName, picture, reSalePrice, _id } = selectOrder
 
     const handleBooking = async e => {
         e.preventDefault();
@@ -23,7 +23,6 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
             number,
             productImage: picture
         }).then(res => {
-            console.log(res);
             if (res.data.acknowledged) {
                 toast.success('Your order is Confirmed')
                 setSelectOrder(null);

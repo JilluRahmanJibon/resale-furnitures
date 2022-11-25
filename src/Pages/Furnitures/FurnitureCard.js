@@ -1,10 +1,11 @@
 import React from 'react';
 import { FaRegHeart } from 'react-icons/fa';
-import { GoReport } from 'react-icons/go';
+import { GoReport, GoLocation } from 'react-icons/go';
+import { FiClock } from 'react-icons/fi';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import badge from '../../Pages/assets/icons/verified.png'
 const FurnitureCard = ({ furniture, setSelectOrder }) => {
-    const { color, location, verified, publishedDate, name, picture, reSalePrice, originalPrice, capacity, role, sellerName, sellerImage, years_of_use, } = furniture
+    const { color, location, verified, publishedDate, name, picture, reSalePrice, originalPrice, sellerEmail, capacity, sellerName, sellerImage, years_of_use, } = furniture
     return (
         <div>
             <div className=" rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -31,16 +32,17 @@ const FurnitureCard = ({ furniture, setSelectOrder }) => {
 
                 <fieldset className='border border-gray-700 rounded-sm mt-4  mx-5'>
                     <legend className='font-semibold'>Seller</legend>
-                    <figcaption className="flex items-center pb-2 pl-4 space-x-2">
+                    <figcaption className="flex items-center  pl-4 space-x-2">
                         <div className='relative'>
-                            <img alt="" className="rounded-full w-9 h-9" src={sellerImage} />
+                            <img title={sellerName} alt="" className="rounded-full w-9 h-9" src={sellerImage} />
                             {verified === 'true' && <img title='This Seller is Verified' className='absolute w-4 h-4 top-0 -right-1  rounded-full' src={badge} alt="" />}
                         </div>
-                        <div className="space-y-0.5 font-medium dark:text-white text-left">
-                            <div>{sellerName}</div>
-                            <div className="text-sm font-light text-gray-500 dark:text-gray-400"> {publishedDate}</div>
+                        <div className="font-medium dark:text-white text-left">
+                            <div title={sellerEmail}>{sellerName}</div>
+                            <div className="  flex items-center   text-gray-500 dark:text-gray-400"> <GoLocation title='Location' className='mt-1 ' /> <span title='Location'>{location} </span> </div>
                         </div>
                     </figcaption>
+                    <div className='flex gap-1 pb-1 pl-4'><FiClock title='Published Date' className='mt-1 text-gray-500 ' /> <span title='Published Date' className='text-sm font-semibold text-gray-500'>{publishedDate}</span></div>
                 </fieldset>
 
 
