@@ -20,6 +20,7 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
             buyerEmail,
             productId: _id,
             productName,
+            price: reSalePrice,
             number,
             productImage: picture
         }).then(res => {

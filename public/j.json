@@ -1,10 +1,10 @@
 [
 	{
-		"categoryId": "01",
+		"categoryName": "RoomCouch",
 		"name": "gray Couch",
-		"capacity": "2 Person",
 		"color": "White",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 120,
 		"reSalePrice": 60,
 		"years_of_use": 2,
@@ -17,11 +17,11 @@
 		"picture": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80&fbclid=IwAR1PNDXuHdd6GdPqNFV2m4vJtknoypYyVQzSl01upkMDuRgx7RGP-rLjnpk"
 	},
 	{
-		"categoryId": "01",
+		"categoryName": "RoomCouch",
 		"name": "gray Couch",
-		"capacity": "3 Person",
 		"color": "gray",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 100,
 		"reSalePrice": 60,
 		"years_of_use": 1,
@@ -34,11 +34,11 @@
 		"picture": "https://images.unsplash.com/photo-1501876725168-00c445821c9e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80&fbclid=IwAR3CvnwP4k5f-yZ9cwwVhFKZPXWawXsAYLwITPnDtTM0id8_gILqzq1jKBA"
 	},
 	{
-		"categoryId": "01",
+		"categoryName": "RoomCouch",
 		"name": "White Couch",
-		"capacity": " Person",
 		"color": "White",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 200,
 		"reSalePrice": 120,
 		"years_of_use": 1.5,
@@ -51,11 +51,11 @@
 		"picture": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 	},
 	{
-		"categoryId": "01",
+		"categoryName": "RoomCouch",
 		"name": "Blue Couch",
-		"capacity": "2 Person",
 		"color": "blue",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 80,
 		"reSalePrice": 50,
 		"years_of_use": 2.5,
@@ -68,11 +68,11 @@
 		"picture": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
 	},
 	{
-		"categoryId": "01",
+		"categoryName": "RoomCouch",
 		"name": "gray Couch",
-		"capacity": "3 Person",
 		"color": "gray",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 220,
 		"reSalePrice": 110,
 		"years_of_use": 1,
@@ -85,11 +85,11 @@
 		"picture": "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "01",
+		"categoryName": "RoomCouch",
 		"name": "plastic Couch",
-		"capacity": "3 Person",
 		"color": "gray",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 150,
 		"reSalePrice": 80,
 		"years_of_use": 3,
@@ -102,11 +102,11 @@
 		"picture": "https://images.unsplash.com/photo-1540574163026-643ea20ade25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 	},
 	{
-		"categoryId": "02",
+		"categoryName": "Chair",
 		"name": "plastic Chair",
-		"capacity": "1 Person",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 20,
 		"reSalePrice": 12,
 		"years_of_use": 0.6,
@@ -119,11 +119,11 @@
 		"picture": "https://images.unsplash.com/photo-1581539250439-c96689b516dd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80"
 	},
 	{
-		"categoryId": "02",
+		"categoryName": "Chair",
 		"name": "plastic Chair",
-		"capacity": "1 Person",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 20,
 		"reSalePrice": 14,
 		"years_of_use": 0.4,
@@ -136,11 +136,11 @@
 		"picture": "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1218&q=80"
 	},
 	{
-		"categoryId": "02",
+		"categoryName": "Chair",
 		"name": "plastic Chair",
-		"capacity": "1 Person",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 22,
 		"reSalePrice": 15,
 		"years_of_use": 1,
@@ -153,11 +153,11 @@
 		"picture": "https://images.unsplash.com/photo-1489269637500-aa0e75768394?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1141&q=80"
 	},
 	{
-		"categoryId": "02",
+		"categoryName": "Chair",
 		"name": "Pome Chair",
-		"capacity": "1 Person",
 		"color": "blue",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 28,
 		"reSalePrice": 16,
 		"years_of_use": 2.5,
@@ -170,11 +170,11 @@
 		"picture": "https://images.unsplash.com/photo-1506898667547-42e22a46e125?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=706&q=80"
 	},
 	{
-		"categoryId": "02",
+		"categoryName": "Chair",
 		"name": "yellow",
-		"capacity": "1 Person",
 		"color": "yellow",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 30,
 		"reSalePrice": 220,
 		"years_of_use": 1,
@@ -187,11 +187,11 @@
 		"picture": "https://images.unsplash.com/photo-1521117044281-472a7f913695?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80"
 	},
 	{
-		"categoryId": "02",
+		"categoryName": "Chair",
 		"name": "Round Chair",
-		"capacity": "1 Person",
 		"color": "gray",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 45,
 		"reSalePrice": 25,
 		"years_of_use": 1,
@@ -204,11 +204,11 @@
 		"picture": "https://images.unsplash.com/photo-1532372576444-dda954194ad0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "03",
+		"categoryName": "OfficeChair",
 		"name": "Office Chair",
-		"capacity": "1 Person",
 		"color": "yellow",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 55,
 		"reSalePrice": 35,
 		"years_of_use": 0.6,
@@ -221,11 +221,11 @@
 		"picture": "https://images.unsplash.com/photo-1541533260371-b8fc9b596d84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "03",
+		"categoryName": "OfficeChair",
 		"name": "plastic Office Chair",
-		"capacity": "1 Person",
 		"color": "gray",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 60,
 		"reSalePrice": 37,
 		"years_of_use": 0.8,
@@ -238,11 +238,11 @@
 		"picture": "https://images.unsplash.com/photo-1505797149-43b0069ec26b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
 	},
 	{
-		"categoryId": "03",
+		"categoryName": "OfficeChair",
 		"name": "yellow Chair",
-		"capacity": "1 Person",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 45,
 		"reSalePrice": 23,
 		"years_of_use": 2.5,
@@ -255,11 +255,11 @@
 		"picture": "https://images.unsplash.com/photo-1552664467-e8727a018a93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "03",
+		"categoryName": "OfficeChair",
 		"name": "gaming Chair",
-		"capacity": "1 Person",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 80,
 		"reSalePrice": 45,
 		"years_of_use": 1.2,
@@ -272,11 +272,11 @@
 		"picture": "https://images.unsplash.com/photo-1606223226320-fc37669d0a4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
 	},
 	{
-		"categoryId": "03",
+		"categoryName": "OfficeChair",
 		"name": "personal chair",
-		"capacity": "1 Person",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 100,
 		"reSalePrice": 66,
 		"years_of_use": 1,
@@ -289,11 +289,11 @@
 		"picture": "https://images.unsplash.com/photo-1622126977176-bf029dbf6ed0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1228&q=80"
 	},
 	{
-		"categoryId": "03",
+		"categoryName": "OfficeChair",
 		"name": "dining Chair",
-		"capacity": "1 Person",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 200,
 		"reSalePrice": 145,
 		"years_of_use": 1,
@@ -306,11 +306,11 @@
 		"picture": "https://images.unsplash.com/photo-1540760029765-138c8f6d2eac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "04",
+		"categoryName": "Bookcase",
 		"name": "Bookcase",
-		"capacity": "3 layer",
 		"color": "",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 100,
 		"reSalePrice": 66,
 		"years_of_use": 5,
@@ -323,11 +323,11 @@
 		"picture": "https://images.unsplash.com/photo-1588111948296-83a8e036e004?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80"
 	},
 	{
-		"categoryId": "04",
+		"categoryName": "Bookcase",
 		"name": "Bookcase",
-		"capacity": "3 layer",
 		"color": "gray",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 120,
 		"reSalePrice": 77,
 		"years_of_use": 6,
@@ -340,11 +340,11 @@
 		"picture": "https://images.unsplash.com/photo-1515542706656-8e6ef17a1521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 	},
 	{
-		"categoryId": "04",
+		"categoryName": "Bookcase",
 		"name": "Bookcase",
-		"capacity": "12 layer",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 300,
 		"reSalePrice": 150,
 		"years_of_use": 8,
@@ -357,11 +357,11 @@
 		"picture": "https://images.unsplash.com/photo-1543248939-4296e1fea89b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80"
 	},
 	{
-		"categoryId": "04",
+		"categoryName": "Bookcase",
 		"name": "Bookcase",
-		"capacity": "2 layer",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 130,
 		"reSalePrice": 80,
 		"years_of_use": 10,
@@ -374,11 +374,11 @@
 		"picture": "https://images.unsplash.com/photo-1524578271613-d550eacf6090?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 	},
 	{
-		"categoryId": "04",
+		"categoryName": "Bookcase",
 		"name": "Bookcase",
-		"capacity": "malty layer",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 1000,
 		"reSalePrice": 570,
 		"years_of_use": 14,
@@ -391,11 +391,11 @@
 		"picture": "https://images.unsplash.com/photo-1551133990-60f24c1e4158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "04",
+		"categoryName": "Bookcase",
 		"name": "Bookcase",
-		"capacity": "malty layer",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 800,
 		"reSalePrice": 500,
 		"years_of_use": 1,
@@ -408,11 +408,11 @@
 		"picture": "https://images.unsplash.com/photo-1551133988-6a0047afdffc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "05",
+		"categoryName": "Wardrobe",
 		"name": "Wardrobe",
-		"capacity": "full",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 500,
 		"reSalePrice": 250,
 		"years_of_use": 5,
@@ -425,11 +425,11 @@
 		"picture": "https://images.unsplash.com/photo-1573311392049-4186e3a47e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 	},
 	{
-		"categoryId": "05",
+		"categoryName": "Wardrobe",
 		"name": "Wardrobe",
-		"capacity": "full",
 		"color": "gray",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 280,
 		"reSalePrice": 130,
 		"years_of_use": 6,
@@ -442,11 +442,11 @@
 		"picture": "https://images.unsplash.com/photo-1558997519-83ea9252edf8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "05",
+		"categoryName": "Wardrobe",
 		"name": "Wardrobe",
-		"capacity": "mini wardrobe",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 300,
 		"reSalePrice": 150,
 		"years_of_use": 8,
@@ -459,11 +459,11 @@
 		"picture": "https://images.unsplash.com/photo-1461418749540-8c49a1d7369e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80"
 	},
 	{
-		"categoryId": "05",
+		"categoryName": "Wardrobe",
 		"name": "Wardrobe",
-		"capacity": "malty layer Wardrobe",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 700,
 		"reSalePrice": 520,
 		"years_of_use": 10,
@@ -476,11 +476,11 @@
 		"picture": "https://images.unsplash.com/photo-1631048499455-4f9e26f23b9f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 	},
 	{
-		"categoryId": "05",
+		"categoryName": "Wardrobe",
 		"name": "Wardrobe",
-		"capacity": "half Wardrobe",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 600,
 		"reSalePrice": 320,
 		"years_of_use": 3,
@@ -493,11 +493,11 @@
 		"picture": "https://images.unsplash.com/photo-1595428774991-829cfeea6267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "05",
+		"categoryName": "Wardrobe",
 		"name": "Wardrobe",
-		"capacity": "half Wardrobe",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 570,
 		"reSalePrice": 410,
 		"years_of_use": 1,
@@ -510,11 +510,11 @@
 		"picture": "https://images.unsplash.com/photo-1595428774839-7e35900fb7f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60"
 	},
 	{
-		"categoryId": "06",
+		"categoryName": "Table",
 		"name": "Coffee table",
-		"capacity": "normal",
 		"color": "different color",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 320,
 		"reSalePrice": 170,
 		"years_of_use": 2,
@@ -527,11 +527,11 @@
 		"picture": "https://images.unsplash.com/photo-1593184256021-2d5216c41333?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "06",
+		"categoryName": "Table",
 		"name": "Coffee table",
-		"capacity": "medium",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 300,
 		"reSalePrice": 170,
 		"years_of_use": 1,
@@ -544,11 +544,11 @@
 		"picture": "https://images.unsplash.com/photo-1557425929-a16fa4d8edc1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "06",
+		"categoryName": "Table",
 		"name": "Coffee table",
-		"capacity": "medium",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 320,
 		"reSalePrice": 170,
 		"years_of_use": 2,
@@ -561,11 +561,11 @@
 		"picture": "https://images.unsplash.com/photo-1594000311835-6d564e5a46b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=711&q=80"
 	},
 	{
-		"categoryId": "06",
+		"categoryName": "Table",
 		"name": "Coffee table",
-		"capacity": "medium",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 270,
 		"reSalePrice": 195,
 		"years_of_use": 0.6,
@@ -578,11 +578,11 @@
 		"picture": "https://images.unsplash.com/photo-1592781689361-815e22d61483?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 	},
 	{
-		"categoryId": "06",
+		"categoryName": "Table",
 		"name": "Coffee table",
-		"capacity": "medium",
 		"color": "black",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 230,
 		"reSalePrice": 170,
 		"years_of_use": 0.2,
@@ -595,11 +595,11 @@
 		"picture": "https://images.unsplash.com/photo-1554295405-abb8fd54f153?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=626&q=80"
 	},
 	{
-		"categoryId": "06",
+		"categoryName": "Table",
 		"name": "Coffee table",
-		"capacity": "medium",
 		"color": "white",
 		"verified": "true",
+		"brand": "",
 		"originalPrice": 320,
 		"reSalePrice": 180,
 		"years_of_use": 1,

@@ -5,7 +5,7 @@ import { FiClock } from 'react-icons/fi';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import badge from '../../Pages/assets/icons/verified.png'
 const FurnitureCard = ({ furniture, setSelectOrder }) => {
-    const { color, location, verified, publishedDate, name, picture, reSalePrice, originalPrice, sellerEmail, capacity, sellerName, sellerImage, years_of_use, } = furniture
+    const { color, location, verified, publishedDate, name, picture, reSalePrice, originalPrice, sellerEmail, sellerName, sellerImage, years_of_use, brand } = furniture
     return (
         <div>
             <div className=" rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -25,7 +25,7 @@ const FurnitureCard = ({ furniture, setSelectOrder }) => {
                         <p>Uses of: <span className='text-red-500 font-bold'> {years_of_use}</span>{years_of_use > 1 ? 'years' : 'year'} </p>
                     </div>
                     <div className='flex px-2 justify-between'>
-                        <p>Capacity:  {capacity} </p>
+                        <p>Brand: {brand}  </p>
                         <p className=''>Color: {color}</p>
                     </div>
                 </div>

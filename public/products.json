@@ -1,33 +1,33 @@
 [
 	{
-		"picture": "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2021-03/500-x-660-h.jpg",
-		"categoryName": "Bedroom",
-		"categoryId": "01"
+		"picture": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80&fbclid=IwAR1JD0lDSKWWrF-ryecvNMz0MqY4ftxfpMKRM4ySYo3XmsKzoIazax7GL8Q",
+		"name": "ROOM COUCH",
+		"categoryName": "RoomCouch"
 	},
 	{
 		"picture": "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
-		"categoryName": "Chair",
-		"categoryId": "02"
+		"name": "Chair",
+		"categoryName": "Chair"
 	},
 	{
 		"picture": "https://images.unsplash.com/photo-1519947486511-46149fa0a254?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-		"categoryName": "Office chair",
-		"categoryId": "03"
+		"name": "Office chair",
+		"categoryName": "OfficeChair"
 	},
 	{
 		"picture": "https://images.unsplash.com/photo-1543248939-4296e1fea89b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
-		"categoryName": "Bookcase",
-		"categoryId": "04"
+		"name": "Bookcase",
+		"categoryName": "Bookcase"
 	},
 
 	{
 		"picture": "https://images.unsplash.com/photo-1643949914877-b20f30792c1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-		"categoryName": "Wardrobe",
-		"categoryId": "05"
+		"name": "Wardrobe",
+		"categoryName": "Wardrobe"
 	},
 	{
 		"picture": "https://images.unsplash.com/photo-1604061986761-d9d0cc41b0d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
-		"categoryName": "Coffee table",
-		"categoryId": "06"
+		"name": "Coffee table",
+		"categoryName": "Table"
 	}
 ]
