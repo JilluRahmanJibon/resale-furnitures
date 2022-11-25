@@ -7,6 +7,7 @@ import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 const SignUp = () => {
 	// terms and conditions state
 	const [checkbox, setCheckbox] = useState(true);
@@ -36,9 +37,17 @@ const SignUp = () => {
 		continueWithGoogle()
 			.then(result => {
 				setLoading(false);
+				const role = 'buyer'
 				const user = result.user;
-				console.log(user);
+				axios.put(`${process.env.REACT_APP_ApiUrl}users?email=${user?.email}`, {
 
+					email: user?.email,
+					role
+				}).then(res => {
+					console.log(res);
+				}).catch(err => {
+					console.log(err);
+				})
 
 			})
 			.catch(error => {
@@ -50,13 +59,13 @@ const SignUp = () => {
 	};
 
 	// create user
+
 	const createUser = data => {
 		const formData = new FormData()
 		formData.append('image', data.image[0])
 		fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_ImageKey}`, { method: 'POST', body: formData }).then(res => res.json()).then(img => {
 			if (img.success) {
 				const image = img.data.url;
-
 				createUserWithEmailAndPass(data.email, data.password)
 					.then(result => {
 						userProfileUpdate(data.name, image);
