@@ -14,35 +14,25 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
         const buyerEmail = form.email.value;
         const number = form.number.value;
 
-        const order = {
+
+        axios.post(`${process.env.REACT_APP_ApiUrl}orders`, {
             buyerName,
             buyerEmail,
             productId: _id,
             productName,
             number,
             productImage: picture
-        };
-        axios.post(`${process.env.REACT_APP_ApiUrl}orders`, {
-            order
         }).then(res => {
             console.log(res);
             if (res.data.acknowledged) {
                 toast.success('Your order is Confirmed')
-                // setSelectOrder(null);
+                setSelectOrder(null);
                 // refetch()
             } else {
                 toast.error(res.message)
             }
         })
-        // .then(data => {
-        //     // if (data.acknowledged) {
-        //     //     toast.success('Your order is Confirmed')
-        //     //     // setSelectOrder(null);
-        //     //     // refetch()
-        //     // } else {
-        //     //     toast.error(data.message)
-        //     // }
-        // })
+
     };
     return (
         <div>

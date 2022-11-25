@@ -1,9 +1,8 @@
 import React from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import { GoReport } from 'react-icons/go';
-import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-
+import badge from '../../Pages/assets/icons/verified.png'
 const FurnitureCard = ({ furniture, setSelectOrder }) => {
     const { color, location, verified, publishedDate, name, picture, reSalePrice, originalPrice, capacity, role, sellerName, sellerImage, years_of_use, } = furniture
     return (
@@ -33,7 +32,10 @@ const FurnitureCard = ({ furniture, setSelectOrder }) => {
                 <fieldset className='border border-gray-700 rounded-sm mt-4  mx-5'>
                     <legend className='font-semibold'>Seller</legend>
                     <figcaption className="flex items-center pb-2 pl-4 space-x-2">
-                        <img alt="" className="rounded-full w-9 h-9" src={sellerImage} />
+                        <div className='relative'>
+                            <img alt="" className="rounded-full w-9 h-9" src={sellerImage} />
+                            {verified === 'true' && <img title='This Seller is Verified' className='absolute w-4 h-4 top-0 -right-1  rounded-full' src={badge} alt="" />}
+                        </div>
                         <div className="space-y-0.5 font-medium dark:text-white text-left">
                             <div>{sellerName}</div>
                             <div className="text-sm font-light text-gray-500 dark:text-gray-400"> {publishedDate}</div>
