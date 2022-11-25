@@ -16,6 +16,7 @@
     "react-hook-form": "^7.39.5",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.6.0",
+    "react-photo-album": "^1.16.1",
     "react-photo-view": "^1.2.3",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",

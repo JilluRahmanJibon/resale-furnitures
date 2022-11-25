@@ -68,13 +68,12 @@ const SignUp = () => {
 						setFirebaseError(error.message);
 					});
 				setFirebaseError('');
-
-
 			}
 		})
 	};
 
 	useTitle("Sign Up");
+
 	return (
 		<div>
 			<section>
