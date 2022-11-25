@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const FurnitureCard = ({ furniture, setSelectOrder }) => {
-    const { capacity, color, location, name, picture, reSalePrice, originalPrice, role, sellerName, years_of_use, _id } = furniture
+    const { color, location, verified, publishedDate, name, picture, reSalePrice, originalPrice, capacity, role, sellerName, sellerImage, years_of_use, } = furniture
     return (
         <div>
             <div className=" rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
@@ -15,19 +15,34 @@ const FurnitureCard = ({ furniture, setSelectOrder }) => {
                     </PhotoView>
                 </PhotoProvider>
 
-                <div className='flex px-2 justify-between'>
-                    <p className=''>OriginalPrice: <del className='text-red-500 font-semibold '>${originalPrice}</del></p>
-                    <p>ReSalePrice: <span className='font-semibold'>${reSalePrice}</span></p>
-                </div>
-                <div className="flex flex-col justify-between py-3 ">
-                    <div className="flex justify-center">
-
-
-
+                <div className='sm:text-[13px] text-[12px] font-semibold'>
+                    <div className='flex px-2 justify-between'>
+                        <p className=''>OriginalPrice: <del className='text-red-500 font-semibold '>${originalPrice}</del></p>
+                        <p>ReSalePrice: <span className='font-semibold'>${reSalePrice}</span></p>
                     </div>
-
+                    <div className='flex px-2 justify-between'>
+                        <p className=''>Name: {name}</p>
+                        <p>Uses of: <span className='text-red-500 font-bold'> {years_of_use}</span>{years_of_use > 1 ? 'years' : 'year'} </p>
+                    </div>
+                    <div className='flex px-2 justify-between'>
+                        <p>Capacity:  {capacity} </p>
+                        <p className=''>Color: {color}</p>
+                    </div>
                 </div>
-                <div className='p-3 justify-between items-center flex'>
+
+                <fieldset className='border border-gray-700 rounded-sm mt-4  mx-5'>
+                    <legend className='font-semibold'>Seller</legend>
+                    <figcaption className="flex items-center pb-2 pl-4 space-x-2">
+                        <img alt="" className="rounded-full w-9 h-9" src={sellerImage} />
+                        <div className="space-y-0.5 font-medium dark:text-white text-left">
+                            <div>{sellerName}</div>
+                            <div className="text-sm font-light text-gray-500 dark:text-gray-400"> {publishedDate}</div>
+                        </div>
+                    </figcaption>
+                </fieldset>
+
+
+                <div className='p-3 pt-4 justify-between items-center flex'>
                     <div className='flex gap-2'><FaRegHeart className='mt-2 cursor-pointer' /> <GoReport className='mt-2 cursor-pointer' /></div>
                     <p><label onClick={() => setSelectOrder(furniture)} htmlFor='orderModal' className=' bg-gray-800 py-2 px-3 cursor-pointer text-sm font-medium rounded-lg hover:bg-gray-700'>Book Now</label></p>
 

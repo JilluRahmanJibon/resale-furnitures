@@ -6,7 +6,7 @@ const ContactUs = () => {
             <div className="flex flex-col justify-between">
                 <div className="space-y-2">
                     <h2 className="text-4xl font-bold leading-tight lg:text-5xl">Let's talk!</h2>
-                    <div className="dark:text-gray-400">Vivamus in nisl metus? Phasellus.</div>
+                    <div className="dark:text-gray-400">Do we live in fear?The boat.</div>
                 </div>
                 <img src={img} alt="" className="p-6 h-52 md:h-64" />
             </div>
