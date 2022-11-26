@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import logo from '../../../Pages/assets/logo.png'
+import logo from '../../../Pages/assets/logo.jpg'
 const Footer = () => {
 	return (
 		<div className="">
@@ -10,12 +10,12 @@ const Footer = () => {
 					<div className="lg:w-1/3 flex justify-center">
 						<Link
 							to="/"
-							aria-label="Bengal Furniture"
-							title="Bengal Furniture"
+							aria-label="Resale Furniture"
+							title="Resale Furniture"
 							className="inline-flex items-center">
 							<img className="sm:w-10 w-8" src={logo} alt="" />
 							<span className="ml-2 sm:text-2xl text-md font-bold tracking-wide">
-								BengalFurniture
+								ResaleFurniture
 							</span>
 						</Link>
 					</div>

@@ -55,8 +55,24 @@ const DashboardMenu = () => {
                         <span className="mx-4 font-medium">Manage Users</span>
                     </Link>
                     <Link
-                        to='/dashboard/addProduct'
+                        to='/dashboard/allProducts'
                         className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                    >
+                        <FaDatabase />
+
+                        <span className="mx-4 font-medium">All Products</span>
+                    </Link>
+                    <Link
+                        to="/dashboard/allReport"
+                        className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                    >
+                        <FaRegTrashAlt />
+
+                        <span className="mx-4 font-medium">All Report</span>
+                    </Link>
+                    <Link
+                        to='/dashboard/addProduct'
+                        className="flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
                     >
                         <FaPlus className="" />
 
@@ -70,27 +86,13 @@ const DashboardMenu = () => {
 
                         <span className="mx-4 font-medium">My All Product</span>
                     </Link>
-                    <Link
-                        to='/dashboard/allProducts'
-                        className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
-                    >
-                        <FaDatabase />
 
-                        <span className="mx-4 font-medium">All Product</span>
-                    </Link>
 
-                    <Link
-                        to="/dashboard/allReport"
-                        className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
-                    >
-                        <FaRegTrashAlt />
 
-                        <span className="mx-4 font-medium">All Report</span>
-                    </Link>
 
                     <Link
                         to="/dashboard/myOrders"
-                        className="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                        className="flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
                     >
                         <FaRegHourglass />
                         <span className="mx-4 font-medium">My Orders </span>

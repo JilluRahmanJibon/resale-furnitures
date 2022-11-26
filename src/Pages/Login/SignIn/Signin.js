@@ -6,10 +6,16 @@ import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import useTitle from "../../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
+import useToken from "../../../Hooks/useToken";
+import axios from "axios";
 const SignIn = () => {
 	// show password state
 	const [show, setShow] = useState(false);
 	const [showPassword, setShowPassword] = useState("password");
+	const [loginError, setLoginError] = useState('');
+	const [loginUserEmail, setLoginUserEmail] = useState('');
+	const [token] = useToken(loginUserEmail)
+
 	const {
 		register,
 		formState: { errors },
@@ -25,17 +31,26 @@ const SignIn = () => {
 	const from = location.state?.from?.pathname || "/";
 	const navigate = useNavigate();
 
+	if (token) {
+		setLoading(false);
+		navigate(from, { replace: true });
+	}
 	// sign in with email and password
 	const signInWithEmailAndPassword = data => {
-
 		logInWithEmailAndPassword(data.email, data.password)
 			.then(result => {
 				setLoading(false);
 				const user = result.user;
-				const currentUser = {
-					email: user.email,
-				};
-				console.log(user);
+				const email = user?.email
+				axios.post(`${process.env.REACT_APP_ApiUrl}users`, {
+					email
+				}).then(res => {
+					if (res.data.acknowledged) {
+						setLoginUserEmail(user?.email)
+					}
+				}).catch(err => {
+					console.log(err);
+				})
 
 			})
 			.catch(error => {
@@ -49,12 +64,18 @@ const SignIn = () => {
 	const signUpWithGoogle = () => {
 		continueWithGoogle()
 			.then(result => {
-				setLoading(false);
 				const user = result.user;
-				const currentUser = {
-					email: user.email,
-				};
-				console.log(user);
+				const email = user?.email
+				axios.post(`${process.env.REACT_APP_ApiUrl}users`, {
+					email: email,
+					role: 'buyer'
+				}).then(res => {
+					if (res.data.acknowledged) {
+						setLoginUserEmail(email)
+					}
+				}).catch(err => {
+					console.log(err);
+				})
 
 			})
 			.catch(error => {

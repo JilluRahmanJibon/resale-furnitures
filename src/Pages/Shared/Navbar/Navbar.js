@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
-import logo from '../../../Pages/assets/logo.png'
+import logo from '../../../Pages/assets/logo.jpg'
 import person from '../../../Pages/assets/icons/person.svg'
 const Navbar = () => {
 	const { user, userLogOut } = useContext(AuthContext);
@@ -17,12 +17,12 @@ const Navbar = () => {
 						<div className="lg:w-0 w-full">
 							<Link
 								to="/"
-								aria-label="Bengal Furniture"
-								title="Bengal Furniture"
+								aria-label="Resale Furniture"
+								title="Resale Furniture"
 								className="inline-flex items-center">
 								<img className="sm:w-10 w-8" src={logo} alt="" />
 								<span className="ml-2 sm:block hidden sm:text-xl font-bold tracking-wide">
-									BengalFurniture
+									ResaleFurniture
 								</span>
 							</Link>
 						</div>
@@ -88,13 +88,13 @@ const Navbar = () => {
 
 												<Link
 													to=""
-													aria-label="Bengal Furniture"
-													title="Bengal Furniture"
+													aria-label="Resale Furniture"
+													title="Resale Furniture"
 													className="inline-flex items-center">
 													{" "}
 													<img className="w-10" src={logo} alt="" />
 													<span className="ml-2 sm:text-xl font-bold tracking-wide uppercase">
-														Bengal Furniture
+														Resale Furniture
 
 													</span>
 												</Link>

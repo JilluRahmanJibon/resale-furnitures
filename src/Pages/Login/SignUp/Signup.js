@@ -8,7 +8,11 @@ import Swal from "sweetalert2";
 import useTitle from "../../../Hooks/useTitle";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import useToken from "../../../Hooks/useToken";
 const SignUp = () => {
+	const [signUpError, setSignUpError] = useState('');
+	const [signUpUserEmail, setSignUpUserEmail] = useState('');
+	const [token] = useToken(signUpUserEmail)
 	// terms and conditions state
 	const [checkbox, setCheckbox] = useState(true);
 	// show password state
@@ -31,20 +35,23 @@ const SignUp = () => {
 	const location = useLocation();
 	const from = location.state?.from?.pathname || "/";
 	const navigate = useNavigate();
-
+	if (token) {
+		setLoading(false);
+		navigate(from, { replace: true });
+	}
 	// sign up with google
 	const signUpWithGoogle = () => {
 		continueWithGoogle()
 			.then(result => {
-				setLoading(false);
-				const role = 'buyer'
 				const user = result.user;
-				axios.put(`${process.env.REACT_APP_ApiUrl}users?email=${user?.email}`, {
-
-					email: user?.email,
-					role
+				const email = user?.email
+				axios.post(`${process.env.REACT_APP_ApiUrl}users`, {
+					email: email,
+					role: 'buyer'
 				}).then(res => {
-					console.log(res);
+					if (res.data.acknowledged) {
+						setSignUpUserEmail(email)
+					}
 				}).catch(err => {
 					console.log(err);
 				})
@@ -70,7 +77,16 @@ const SignUp = () => {
 					.then(result => {
 						userProfileUpdate(data.name, image);
 						const user = result.user;
-						console.log(user);
+						axios.post(`${process.env.REACT_APP_ApiUrl}users`, {
+							email: user?.email,
+							role: data.role
+						}).then(res => {
+							if (res.data.acknowledged) {
+								setSignUpUserEmail(user?.email)
+							}
+						}).catch(err => {
+							console.log(err);
+						})
 					})
 					.catch(error => {
 						setLoading(false);
@@ -203,15 +219,15 @@ const SignUp = () => {
 									)}
 								</div>
 								<div>
-									<label
-										htmlFor="photo"
+									<div
+
 										className="bg-gray-50 border border-gray-300 text-gray-900 flex-col  flex items-center font-bold  sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600   w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
 
 
 										{<><RiImageAddFill className="w-7 h-7" />
-											<h1>Upload Image </h1></>}
+											<label htmlFor="photo"><h1 className="underline cursor-pointer">Upload Image </h1></label></>}
 
-									</label>
+									</div>
 									<input
 										type="file"
 										name="image"
