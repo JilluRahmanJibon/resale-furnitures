@@ -14,6 +14,8 @@ import Loader from "../../Pages/Shared/Loader/Loader";
 export const AuthContext = createContext();
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
+	// user manage state 
+	const [userRoleManage, setUserRoleManage] = useState('')
 	// user state
 	const [user, setUser] = useState(null);
 	// loading state
@@ -67,7 +69,7 @@ const AuthProvider = ({ children }) => {
 		logInWithEmailAndPassword,
 		userLogOut,
 		continueWithGoogle,
-		setLoading,
+		setLoading, userRoleManage, setUserRoleManage
 	};
 	return (
 		<div>

@@ -44,13 +44,14 @@ const SignUp = () => {
 		continueWithGoogle()
 			.then(result => {
 				const user = result.user;
-				const email = user?.email
 				axios.post(`${process.env.REACT_APP_ApiUrl}users`, {
-					email: email,
-					role: 'buyer'
+					role: 'buyer',
+					email: user?.email,
+					picture: user?.photoURL,
+					name: user?.displayName
 				}).then(res => {
 					if (res.data.acknowledged) {
-						setSignUpUserEmail(email)
+						setSignUpUserEmail(user?.email)
 					}
 				}).catch(err => {
 					console.log(err);
@@ -79,7 +80,9 @@ const SignUp = () => {
 						const user = result.user;
 						axios.post(`${process.env.REACT_APP_ApiUrl}users`, {
 							email: user?.email,
-							role: data.role
+							role: data.role,
+							picture: image,
+							name: data.name
 						}).then(res => {
 							if (res.data.acknowledged) {
 								setSignUpUserEmail(user?.email)

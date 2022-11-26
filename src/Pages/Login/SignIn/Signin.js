@@ -65,13 +65,14 @@ const SignIn = () => {
 		continueWithGoogle()
 			.then(result => {
 				const user = result.user;
-				const email = user?.email
 				axios.post(`${process.env.REACT_APP_ApiUrl}users`, {
-					email: email,
-					role: 'buyer'
+					email: user?.email,
+					role: 'buyer',
+					picture: user?.photoURL,
+					name: user?.displayName
 				}).then(res => {
 					if (res.data.acknowledged) {
-						setLoginUserEmail(email)
+						setLoginUserEmail(user?.email)
 					}
 				}).catch(err => {
 					console.log(err);

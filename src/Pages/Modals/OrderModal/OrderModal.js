@@ -2,9 +2,10 @@ import axios from 'axios';
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import SmallLoader from '../../Shared/Loader/SmallLoader';
 
 const OrderModal = ({ selectOrder, setSelectOrder }) => {
-    const { user } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext)
     const { name: productName, picture, reSalePrice, _id } = selectOrder
     function formatDate(date) {
         const yyyy = date.getFullYear();
@@ -101,11 +102,8 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
                             className="input w-full border-2   border-gray-200 "
                         />
 
-                        <input
-                            type="submit"
-                            value="Submit"
-                            className="input  btn btn-accent text-white uppercase w-full "
-                        />
+
+                        <button type="submit" className="input  btn btn-accent text-white uppercase w-full "> {loading ? <SmallLoader /> : "Submit"}</button>
                     </form>
 
                 </div>

@@ -4,14 +4,14 @@ import {
     FaPlus,
     FaRegHourglass,
     FaRegTrashAlt,
-    FaUserAlt,
+    FaUsers,
 } from "react-icons/fa";
 import { MdManageAccounts } from 'react-icons/md'
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const DashboardMenu = () => {
-    const { user } = useContext(AuthContext);
+    const { user, userRoleManage } = useContext(AuthContext);
     return (
         <div className="flex flex-col pl-4 bg-gray-100 ">
             <Link to="/">
@@ -39,12 +39,12 @@ const DashboardMenu = () => {
 
 
                     <Link
-                        to="/dashboard/allUsers"
+                        to="/dashboard/allSellers"
                         className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
                     >
-                        <FaUserAlt />
+                        <FaUsers />
 
-                        <span className="mx-4 font-medium">All User</span>
+                        <span className="mx-4 font-medium">All Sellers</span>
                     </Link>
                     <Link
                         to='/dashboard/manageUsers'

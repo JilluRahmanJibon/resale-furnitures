@@ -14,7 +14,10 @@ import SingleFurniture from "../Pages/Furnitures/SingleFurniture";
 import Home from "../Pages/Home/Home/Home";
 import SignIn from "../Pages/Login/SignIn/Signin";
 import SignUp from "../Pages/Login/SignUp/Signup";
+import AdminRoute from "./AdminRoute";
+import BuyerRoute from "./BuyerRoute";
 import PrivateRouter from "./PrivateRouter";
+import SellerRoute from "./SellerRoute";
 
 const router = createBrowserRouter([
 	{
@@ -34,12 +37,12 @@ const router = createBrowserRouter([
 		],
 	}, {
 		path: '/dashboard', element: <PrivateRouter><Dashboard /></PrivateRouter>, children: [
-			{ path: '/dashboard/myOrders', element: <MyOrders /> },
-			{ path: '/dashboard/allUsers', element: <AllUsers /> },
-			{ path: '/dashboard/manageUsers', element: <ManageUsers /> },
-			{ path: '/dashboard/addProduct', element: <AddProduct /> },
-			{ path: '/dashboard/myAllProducts', element: <MyAllProducts /> },
-			{ path: '/dashboard/allProducts', element: <AllProducts /> },
+			{ path: '/dashboard/myOrders', element: <BuyerRoute><MyOrders /> </BuyerRoute> },
+			{ path: '/dashboard/allSellers', element: <AdminRoute><AllUsers /> </AdminRoute> },
+			{ path: '/dashboard/manageUsers', element: <AdminRoute><ManageUsers /></AdminRoute> },
+			{ path: '/dashboard/allProducts', element: <AdminRoute><AllProducts /></AdminRoute> },
+			{ path: '/dashboard/addProduct', element: <SellerRoute><AddProduct /></SellerRoute> },
+			{ path: '/dashboard/myAllProducts', element: <SellerRoute><MyAllProducts /> </SellerRoute> },
 		]
 	}
 ]);
