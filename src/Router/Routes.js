@@ -36,7 +36,7 @@ const router = createBrowserRouter([
 
 		],
 	}, {
-		path: '/dashboard', element: <PrivateRouter><Dashboard /></PrivateRouter>, children: [
+		path: `/dashboard/`, element: <PrivateRouter><Dashboard /></PrivateRouter>, children: [
 			{ path: '/dashboard/myOrders', element: <BuyerRoute><MyOrders /> </BuyerRoute> },
 			{ path: '/dashboard/allSellers', element: <AdminRoute><AllUsers /> </AdminRoute> },
 			{ path: '/dashboard/manageUsers', element: <AdminRoute><ManageUsers /></AdminRoute> },

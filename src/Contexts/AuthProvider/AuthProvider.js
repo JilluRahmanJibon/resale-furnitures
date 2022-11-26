@@ -15,7 +15,6 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
 	// user manage state 
-	const [userRoleManage, setUserRoleManage] = useState('')
 	// user state
 	const [user, setUser] = useState(null);
 	// loading state
@@ -69,7 +68,7 @@ const AuthProvider = ({ children }) => {
 		logInWithEmailAndPassword,
 		userLogOut,
 		continueWithGoogle,
-		setLoading, userRoleManage, setUserRoleManage
+		setLoading,
 	};
 	return (
 		<div>

@@ -13,6 +13,7 @@ const ManageUsers = () => {
             setUsers(result)
         })
     }, [user?.email])
+
     return (
         <div>
             <h1 className='text-3xl font-bold pb-5'>Manage Users </h1>

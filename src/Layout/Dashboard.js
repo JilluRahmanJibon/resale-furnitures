@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../Hooks/useTitle';
@@ -7,6 +7,16 @@ import Navbar from '../Pages/Shared/Navbar/Navbar';
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext)
+    const [singleUser, setSingleUser] = useState({})
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_ApiUrl}user/${user?.email}`, {
+            headers: {
+                authorization: `bearer ${localStorage.getItem('access-token')}`
+            }
+        }).then(res => res.json()).then(result => {
+            setSingleUser(result);
+        })
+    }, [user?.email])
     useTitle("Dashboard")
     return (
         <div>
@@ -19,7 +29,7 @@ const Dashboard = () => {
                 <div className="drawer-side">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay lg:hidden"></label>
                     <ul className="menu  w-80 ">
-                        <DashboardMenu />
+                        <DashboardMenu singleUser={singleUser} />
                     </ul>
                 </div>
             </div>
