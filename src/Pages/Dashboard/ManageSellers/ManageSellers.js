@@ -1,23 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BsTrash } from 'react-icons/bs';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import { BsTrash } from 'react-icons/bs';
 
-const ManageUsers = () => {
+const ManageSellers = () => {
     const { user } = useContext(AuthContext)
-    const [users, setUsers] = useState([])
+    const [sellers, setSellers] = useState([])
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_ApiUrl}users?email=${user?.email}`, {
+        fetch(`${process.env.REACT_APP_ApiUrl}users/sellers?email=${user?.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
             }
         }).then(res => res.json()).then(result => {
-            setUsers(result)
+            setSellers(result)
         })
     }, [user?.email])
-
     return (
         <div>
-            <h1 className='text-3xl font-bold pb-5'>Manage All Users </h1>
+            <h1 className='text-3xl pb-5 font-bold'>Manage All Sellers </h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
@@ -25,14 +24,14 @@ const ManageUsers = () => {
                         <tr>
                             <th >SL</th>
                             <th>Name</th>
+                            <th>Verified</th>
                             <th>Role</th>
                             <th>Action</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map((person, idx) => <tr key={person._id}>
+                            sellers.map((person, idx) => <tr key={person._id}>
                                 <th> {idx + 1}</th>
                                 <td >
                                     <div className="flex items-center space-x-3">
@@ -47,6 +46,7 @@ const ManageUsers = () => {
                                         </div>
                                     </div>
                                 </td>
+                                <td>false </td>
                                 <td> {person?.role}</td>
                                 <td> <BsTrash title='remove user ' className='cursor-pointer text-red-500 text-lg' /></td>
 
@@ -63,4 +63,4 @@ const ManageUsers = () => {
     );
 };
 
-export default ManageUsers;
+export default ManageSellers;

@@ -22,12 +22,15 @@ const DashboardMenu = ({ singleUser }) => {
                     src={user?.photoURL}
                     alt="avatar"
                 />
+                <p className='text-xl font-bold'>{singleUser?.role}</p>
+
                 <h4 className="mx-2 mt-2 font-medium text-gray-800  hover:underline">
                     {user?.displayName}
                 </h4>
                 <p className="mx-2 mt-1 text-sm font-medium text-gray-600  hover:underline">
                     {user?.email}
                 </p>
+
             </div>
 
             <div className="flex flex-col justify-between flex-1 mt-3">
@@ -35,21 +38,30 @@ const DashboardMenu = ({ singleUser }) => {
 
 
                     {
-                        singleUser.role === 'Admin' && <> <Link
-                            to="/dashboard/allSellers"
-                            className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
-                        >
-                            <FaUsers />
+                        singleUser.role === 'Admin' && <>
+                            <Link
+                                to="/dashboard/manageSellers"
+                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                            >
+                                <FaUsers />
 
-                            <span className="mx-4 font-medium">All Sellers</span>
-                        </Link>
+                                <span className="mx-4 font-medium">Manage Sellers</span>
+                            </Link>
+                            <Link
+                                to="/dashboard/manageBuyers"
+                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                            >
+                                <FaUsers />
+
+                                <span className="mx-4 font-medium">Manage Buyers</span>
+                            </Link>
                             <Link
                                 to='/dashboard/manageUsers'
                                 className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
                             >
                                 <MdManageAccounts className="text-xl" />
 
-                                <span className="mx-4 font-medium">Manage Users</span>
+                                <span className="mx-4 font-medium">Manage All Users</span>
                             </Link>
                             <Link
                                 to='/dashboard/allProducts'
@@ -60,12 +72,12 @@ const DashboardMenu = ({ singleUser }) => {
                                 <span className="mx-4 font-medium">All Products</span>
                             </Link>
                             <Link
-                                to="/dashboard/allReport"
+                                to="/dashboard/allReports"
                                 className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
                             >
                                 <FaRegTrashAlt />
 
-                                <span className="mx-4 font-medium">All Report</span>
+                                <span className="mx-4 font-medium">All Reports</span>
                             </Link>
                         </>
                     }

@@ -4,7 +4,9 @@ import Root from "../Layout/Root";
 import Blog from "../Pages/Blog/Blog";
 import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
 import AllProducts from "../Pages/Dashboard/AllProducts/AllProducts";
-import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AllReports from "../Pages/Dashboard/AllReports/AllReports";
+import ManageBuyers from "../Pages/Dashboard/ManageBuyers/ManageBuyers";
+import ManageSellers from "../Pages/Dashboard/ManageSellers/ManageSellers";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 import MyAllProducts from "../Pages/Dashboard/MyAllProducts/MyAllProducts";
 import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
@@ -38,9 +40,12 @@ const router = createBrowserRouter([
 	}, {
 		path: `/dashboard/`, element: <PrivateRouter><Dashboard /></PrivateRouter>, children: [
 			{ path: '/dashboard/myOrders', element: <BuyerRoute><MyOrders /> </BuyerRoute> },
-			{ path: '/dashboard/allSellers', element: <AdminRoute><AllUsers /> </AdminRoute> },
+			{ path: '/dashboard/manageSellers', element: <AdminRoute><ManageSellers /> </AdminRoute> },
 			{ path: '/dashboard/manageUsers', element: <AdminRoute><ManageUsers /></AdminRoute> },
+			{ path: '/dashboard/manageBuyers', element: <AdminRoute><ManageBuyers /></AdminRoute> },
 			{ path: '/dashboard/allProducts', element: <AdminRoute><AllProducts /></AdminRoute> },
+			{ path: '/dashboard/allReports', element: <AdminRoute><AllReports /></AdminRoute> },
+			{ path: '/dashboard/allReports', element: <SellerRoute><AllReports /></SellerRoute> },
 			{ path: '/dashboard/addProduct', element: <SellerRoute><AddProduct /></SellerRoute> },
 			{ path: '/dashboard/myAllProducts', element: <SellerRoute><MyAllProducts /> </SellerRoute> },
 		]

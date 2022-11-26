@@ -1,23 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { BsTrash } from 'react-icons/bs';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import { BsTrash } from 'react-icons/bs';
 
-const ManageUsers = () => {
+const ManageBuyers = () => {
     const { user } = useContext(AuthContext)
-    const [users, setUsers] = useState([])
+    const [buyers, setBuyers] = useState([])
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_ApiUrl}users?email=${user?.email}`, {
+        fetch(`${process.env.REACT_APP_ApiUrl}users/buyers?email=${user?.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
             }
         }).then(res => res.json()).then(result => {
-            setUsers(result)
+            setBuyers(result)
         })
     }, [user?.email])
-
     return (
         <div>
-            <h1 className='text-3xl font-bold pb-5'>Manage All Users </h1>
+            <h1 className='text-3xl pb-5 font-bold'>Manage All Buyers </h1>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
@@ -27,12 +26,11 @@ const ManageUsers = () => {
                             <th>Name</th>
                             <th>Role</th>
                             <th>Action</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map((person, idx) => <tr key={person._id}>
+                            buyers.map((person, idx) => <tr key={person._id}>
                                 <th> {idx + 1}</th>
                                 <td >
                                     <div className="flex items-center space-x-3">
@@ -63,4 +61,4 @@ const ManageUsers = () => {
     );
 };
 
-export default ManageUsers;
+export default ManageBuyers;
