@@ -18,12 +18,13 @@ const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, } = useForm();
     function formatDate(date) {
         const yyyy = date.getFullYear();
-        let mm = date.getMonth() + 1;
+        let dd = date.getDate() + 1;
+        if (dd < 10) dd = "0" + dd;
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
         ];
         let strTime =
-            monthNames[date.getMonth()] + "/" + mm + "/" + yyyy;
+            monthNames[date.getMonth()] + "/" + dd + "/" + yyyy;
         return strTime;
     }
     const currentDate = formatDate(new Date());

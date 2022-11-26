@@ -6,7 +6,18 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 const OrderModal = ({ selectOrder, setSelectOrder }) => {
     const { user } = useContext(AuthContext)
     const { name: productName, picture, reSalePrice, _id } = selectOrder
-
+    function formatDate(date) {
+        const yyyy = date.getFullYear();
+        let dd = date.getDate() + 1;
+        if (dd < 10) dd = "0" + dd;
+        const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+        ];
+        let strTime =
+            monthNames[date.getMonth()] + "/" + dd + "/" + yyyy;
+        return strTime;
+    }
+    const currentDate = formatDate(new Date());
     const handleBooking = async e => {
         e.preventDefault();
         const form = e.target;
@@ -22,6 +33,7 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
             productName,
             price: reSalePrice,
             number,
+            orderDate: currentDate,
             productImage: picture
         }).then(res => {
             if (res.data.acknowledged) {
@@ -29,7 +41,7 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
                 setSelectOrder(null);
                 // refetch()
             } else {
-                toast.error(res.message)
+                toast.error(res.data.message)
             }
         })
 
