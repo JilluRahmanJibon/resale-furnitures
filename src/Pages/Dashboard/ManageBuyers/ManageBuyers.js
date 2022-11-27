@@ -1,19 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { BsTrash } from 'react-icons/bs';
+import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
+import { useQuery } from '@tanstack/react-query';
+import toast from 'react-hot-toast';
 
 const ManageBuyers = () => {
     const { user } = useContext(AuthContext)
-    const [buyers, setBuyers] = useState([])
-    useEffect(() => {
-        fetch(`${process.env.REACT_APP_ApiUrl}users/buyers?email=${user?.email}`, {
+    const [removeUser, setRemoveUser] = useState(null)
+    const { data: buyers, isLoading, refetch } = useQuery({
+        queryKey: ['users/sellers'],
+        queryFn: () => fetch(`${process.env.REACT_APP_ApiUrl}users/buyers?email=${user?.email}`, {
+            headers: {
+                authorization: `bearer ${localStorage.getItem('access-token')}`
+            }
+        }).then(res => res.json())
+    })
+    const handleRemoveUser = () => {
+        fetch(`${process.env.REACT_APP_ApiUrl}users/${removeUser?._id}`, {
+            method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
             }
         }).then(res => res.json()).then(result => {
-            setBuyers(result)
+            if (result.acknowledged) {
+                toast.success(`${removeUser?.name} deleted successfully.`, { duration: 3000 })
+                refetch()
+
+            }
         })
-    }, [user?.email])
+    }
+    const closeModal = () => {
+        setRemoveUser(null)
+    }
+    if (isLoading) {
+        return
+    }
     return (
         <div>
             <h1 className='text-3xl pb-5 font-bold'>Manage All Buyers </h1>
@@ -46,7 +68,7 @@ const ManageBuyers = () => {
                                     </div>
                                 </td>
                                 <td> {person?.role}</td>
-                                <td> <BsTrash title='remove user ' className='cursor-pointer text-red-500 text-lg' /></td>
+                                <td> <label htmlFor="confirm-modal"><BsTrash title='remove user' onClick={() => setRemoveUser(person)} className='cursor-pointer text-red-500 text-lg' /></label></td>
 
                             </tr>)
                         }
@@ -57,6 +79,7 @@ const ManageBuyers = () => {
 
                 </table>
             </div>
+            {removeUser && <ConfirmationModal successAction={handleRemoveUser} closeModal={closeModal} title={`Are you sure You want to delete?`} message={`If you want to delete "${removeUser.name}". It can't be recover.`} />}
         </div>
     );
 };

@@ -15,7 +15,7 @@ const DashboardMenu = ({ singleUser }) => {
 
 
     return (
-        <div className="flex flex-col pl-4 bg-gray-100 ">
+        <div className="flex flex-col pl-4  ">
             <div className="flex flex-col border-b pb-3 border-gray-300 items-center mt-6 -mx-2">
                 <img
                     className="object-cover w-24 h-24 mx-2 rounded-full"
