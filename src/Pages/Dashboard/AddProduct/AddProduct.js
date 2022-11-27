@@ -79,7 +79,7 @@ const AddProduct = () => {
 
     return (
         <div>
-            <section className="max-w-4xl p-6   rounded-md shadow-md  mt-20">
+            <section className="max-w-4xl p-6   rounded-md shadow-md">
                 <h1 className="text-xl font-bold  capitalize ">Add Product</h1>
                 <form onSubmit={handleSubmit(handleAddProduct)}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">

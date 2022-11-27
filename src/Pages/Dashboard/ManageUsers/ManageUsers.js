@@ -1,33 +1,38 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { BsTrash } from 'react-icons/bs';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import SmallLoader from '../../Shared/Loader/SmallLoader';
 
 const ManageUsers = () => {
-    const { user, setLoading } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [removeUser, setRemoveUser] = useState(null)
     const { data: users, isLoading, refetch } = useQuery({
         queryKey: ['users'],
         queryFn: () => fetch(`${process.env.REACT_APP_ApiUrl}users?email=${user?.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
-            }
+            },
+
+
         }).then(res => res.json())
     })
 
     const handleRemoveUser = () => {
-        fetch(`${process.env.REACT_APP_ApiUrl}users/${removeUser?._id}`, {
+        fetch(`${process.env.REACT_APP_ApiUrl}users/${removeUser?._id}?email=${user?.email}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
-            }
+            },
         }).then(res => res.json()).then(result => {
             if (result.acknowledged) {
                 toast.success(`${removeUser?.name} deleted successfully.`, { duration: 3000 })
                 refetch()
-
+            }
+            else {
+                toast.error(`${result.message}.`, { duration: 3000 })
             }
         })
     }
@@ -36,7 +41,7 @@ const ManageUsers = () => {
     }
 
     if (isLoading) {
-        return
+        return <SmallLoader />
     }
 
     return (
