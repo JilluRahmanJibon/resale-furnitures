@@ -14,7 +14,7 @@ const AddProduct = () => {
     useTitle('Add Product')
     const navigate = useNavigate()
     const { data: categories, isLoading } = useQuery({
-        queryKey: ['categories'],
+        queryKey: ['categories', user?.email],
         queryFn: () => fetch(`${process.env.REACT_APP_ApiUrl}categories`).then(res => res.json())
     })
     const { register, formState: { errors }, handleSubmit, } = useForm();

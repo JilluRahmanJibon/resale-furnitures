@@ -12,7 +12,7 @@ const AllReports = () => {
 
     useTitle('All Reports')
     const { data: allReports, isLoading, refetch } = useQuery({
-        queryKey: ['reports'],
+        queryKey: ['reports', user?.email],
         queryFn: () => fetch(`${process.env.REACT_APP_ApiUrl}reports?email=${user?.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
@@ -72,7 +72,7 @@ const AllReports = () => {
     return (
         <div>
             {
-                allReports?.length > 0 && <>
+                allReports?.length > 0 ? <>
                     <h1 className='text-3xl pl-3 font-semibold pb-4'>All Reports : {allReports?.length}</h1>
                     <div className='grid  sm:grid-cols-2'>
                         {
@@ -115,7 +115,7 @@ const AllReports = () => {
                         }
                     </div>
                 </>
-            }
+                    : <h1 className='sm:text-3xl text-xl font-bold  text-red-400 mt-16 lg:ml-4'>No Reports were Found!</h1>}
             {deleteProduct && <ConfirmationModal successAction={handleRemoveProduct} closeModal={closeModal} title={`Are you sure You want to delete?`} message={`If you want to delete "${deleteProduct.productName}". It can't be recover.`} />}
 
         </div>

@@ -10,6 +10,7 @@ import ManageSellers from "../Pages/Dashboard/ManageSellers/ManageSellers";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 import MyAllProducts from "../Pages/Dashboard/MyAllProducts/MyAllProducts";
 import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 import ReportedProducts from "../Pages/Dashboard/ReportedProducts/ReportedProducts";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Furnitures from "../Pages/Furnitures/Furnitures";
@@ -49,6 +50,7 @@ const router = createBrowserRouter([
 			{ path: '/dashboard/reportedProducts', element: <SellerRoute><ReportedProducts /></SellerRoute> },
 			{ path: '/dashboard/addProduct', element: <SellerRoute><AddProduct /></SellerRoute> },
 			{ path: '/dashboard/', element: <MyOrders /> },
+			{ path: '/dashboard/payment/:id', element: <Payment />, loader: async ({ params }) => fetch(`${process.env.REACT_APP_ApiUrl}singleOrder/${params.id}`) },
 			{ path: '/dashboard/myAllProducts', element: <SellerRoute><MyAllProducts /> </SellerRoute> },
 		]
 	}

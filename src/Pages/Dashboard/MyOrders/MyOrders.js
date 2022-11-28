@@ -12,7 +12,7 @@ const MyOrders = () => {
     useTitle("My Orders ")
     const [removeCardProduct, setRemoveCardProduct] = useState(null)
     const { data: orders, isLoading, refetch } = useQuery({
-        queryKey: ['orders'],
+        queryKey: ['orders', user?.email],
         queryFn: () => fetch(`${process.env.REACT_APP_ApiUrl}orders/${user?.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
@@ -82,7 +82,7 @@ const MyOrders = () => {
 
                                     <td> ${order?.price}</td>
                                     <td> <label htmlFor="confirm-modal"><BsTrash title='remove product' onClick={() => setRemoveCardProduct(order)} className='cursor-pointer text-red-500 text-lg' /></label></td>
-                                    <td> {order?.price === 'paid' ? 'Paid' : <div className='flex items-center gap-2'><p className='italic font-semibold text-sm'>Pending</p> <button className='bg-primary btn btn-sm border-none text-black hover:text-white'>Pay</button></div>}</td>
+                                    <td> {order?.paid === true ? <button disabled className='btn btn-sm'>Paid</button> : <div className='flex items-center gap-2'><p className='italic font-semibold text-sm'>Pending</p> <Link to={`/dashboard/payment/${order._id}`}><button className='bg-primary btn btn-sm border-none text-black hover:text-white'>Pay</button></Link></div>}</td>
                                 </tr>)
                             }
 

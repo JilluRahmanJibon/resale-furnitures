@@ -12,7 +12,7 @@ const AllProducts = () => {
     useTitle('All Products')
     const [removeProduct, setRemoveProduct] = useState(null)
     const { data: furnitures, isLoading, refetch } = useQuery({
-        queryKey: ['furnitures'],
+        queryKey: ['furnitures', user?.email],
         queryFn: () => fetch(`${process.env.REACT_APP_ApiUrl}furnitures`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`

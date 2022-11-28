@@ -13,7 +13,7 @@ const ManageSellers = () => {
     useTitle('Manage Sellers')
     const [removeUser, setRemoveUser] = useState(null)
     const { data: sellers, isLoading, refetch } = useQuery({
-        queryKey: ['users/sellers'],
+        queryKey: ['users/sellers', user?.email],
         queryFn: () => fetch(`${process.env.REACT_APP_ApiUrl}users/sellers?email=${user?.email}`, {
             headers: {
                 authorization: `bearer ${localStorage.getItem('access-token')}`
