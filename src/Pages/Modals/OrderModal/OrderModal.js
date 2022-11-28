@@ -5,11 +5,11 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import SmallLoader from '../../Shared/Loader/SmallLoader';
 
 const OrderModal = ({ selectOrder, setSelectOrder }) => {
-    const { user, loading } = useContext(AuthContext)
+    const { user, loading, setLoading } = useContext(AuthContext)
     const { name: productName, picture, reSalePrice, _id } = selectOrder
     function formatDate(date) {
         const yyyy = date.getFullYear();
-        let dd = date.getDate() + 1;
+        let dd = date.getDate();
         if (dd < 10) dd = "0" + dd;
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
             "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
@@ -20,14 +20,16 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
     }
     const currentDate = formatDate(new Date());
     const handleBooking = async e => {
+        setLoading(true)
         e.preventDefault();
         const form = e.target;
         const buyerName = form.name.value;
         const buyerEmail = form.email.value;
+        const sellerEmail = selectOrder?.sellerEmail;
         const number = form.number.value;
 
 
-        axios.post(`${process.env.REACT_APP_ApiUrl}orders`, {
+        axios.post(`${process.env.REACT_APP_ApiUrl}orders?email=${selectOrder?.sellerEmail}`, {
             buyerName,
             buyerEmail,
             productId: _id,
@@ -35,13 +37,25 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
             price: reSalePrice,
             number,
             orderDate: currentDate,
-            productImage: picture
+            sellerEmail,
+            productImage: picture,
         }).then(res => {
             if (res.data.acknowledged) {
-                toast.success('Your order is Confirmed')
+                setLoading(true)
+                axios.put(`${process.env.REACT_APP_ApiUrl}furnitures/${_id}`, {
+                    Status: 'sold'
+                }).then(res => {
+                    console.log(res);
+                    if (res.data?.acknowledged) {
+                        setLoading(false)
+
+                    }
+                })
+                toast.success('Your order is Confirmed', { duration: 1500 })
                 setSelectOrder(null);
-                // refetch()
+
             } else {
+                setLoading(false)
                 toast.error(res.data.message)
             }
         })
@@ -64,7 +78,7 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
                             required
                             type="text"
                             placeholder="Full Name"
-                            className="  input w-full border-2   border-gray-200 "
+                            className="  input w-full border-2 border-gray-200 "
                         />
 
                         <input
@@ -74,7 +88,7 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
                             defaultValue={user?.email}
                             disabled={user?.email}
                             placeholder="Email"
-                            className="input w-full border-2   border-gray-200 "
+                            className="input w-full border-2 border-gray-200 "
                         />
                         <input
                             name="price"
@@ -83,14 +97,14 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
                             required
                             type="text"
                             placeholder="Full Name"
-                            className="  input w-full border-2   border-gray-200 "
+                            className="  input w-full border-2 border-gray-200 "
                         />
                         <input
                             name="address"
                             required
                             type="text"
                             placeholder="Give your address"
-                            className="input w-full border-2   border-gray-200 "
+                            className="input w-full border-2 border-gray-200 "
                         />
                         <input
                             name="number"
@@ -99,7 +113,7 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
                             min="10"
                             minLength={10}
                             placeholder="Phone Number"
-                            className="input w-full border-2   border-gray-200 "
+                            className="input w-full border-2 border-gray-200 "
                         />
 
 

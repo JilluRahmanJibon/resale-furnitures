@@ -3,12 +3,13 @@ import {
     FaDatabase,
     FaPlus,
     FaRegHourglass,
-    FaRegTrashAlt,
     FaUsers,
 } from "react-icons/fa";
-import { MdOutlineReportProblem, MdManageAccounts } from 'react-icons/md'
-import { Link } from "react-router-dom";
+import { MdReport } from 'react-icons/md';
+import { MdManageAccounts } from 'react-icons/md'
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
+import verifyLogo from '../../assets/icons/verified.png';
 
 const DashboardMenu = ({ singleUser }) => {
     const { user } = useContext(AuthContext);
@@ -17,12 +18,16 @@ const DashboardMenu = ({ singleUser }) => {
     return (
         <div className="flex flex-col pl-4  ">
             <div className="flex flex-col border-b pb-3 items-center mt-6 -mx-2">
-                <img
-                    className="object-cover w-24 h-24 mx-2 rounded-full"
-                    src={user?.photoURL}
-                    alt="avatar"
-                />
-                <p className='text-xl font-bold'>{singleUser?.role}</p>
+                <div className="relative ">
+                    <img
+                        className="object-cover w-24 h-24 mx-2 rounded-full"
+                        src={user?.photoURL}
+                        alt="avatar"
+                    />
+                    {singleUser?.verified === 'true' && <img title='This Seller is Verified' className='absolute w-4 h-4   right-3  rounded-full bottom-2' src={verifyLogo} alt="" />}
+
+                    <p className='text-xl text-center font-bold'>{singleUser?.role}</p>
+                </div>
 
                 <h4 className="mx-2 mt-2 font-medium text-gray-800  hover:underline">
                     {user?.displayName}
@@ -39,98 +44,106 @@ const DashboardMenu = ({ singleUser }) => {
 
                     {
                         singleUser.role === 'Admin' && <>
-                            <Link
+                            <NavLink
                                 to="/dashboard/"
-                                className="flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
                                 <FaRegHourglass />
                                 <span className="mx-4 font-medium">My Orders </span>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                                 to='/dashboard/allProducts'
-                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
                                 <FaDatabase />
 
                                 <span className="mx-4 font-medium">All Products</span>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                                 to="/dashboard/allReports"
-                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
-                                <FaRegTrashAlt />
+                                <MdReport />
 
                                 <span className="mx-4 font-medium">All Reports</span>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                                 to="/dashboard/manageSellers"
-                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
                                 <FaUsers />
 
                                 <span className="mx-4 font-medium">Manage Sellers</span>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                                 to="/dashboard/manageBuyers"
-                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
                                 <FaUsers />
 
                                 <span className="mx-4 font-medium">Manage Buyers</span>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                                 to='/dashboard/manageUsers'
-                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
                                 <MdManageAccounts className="text-xl" />
 
                                 <span className="mx-4 font-medium">Manage All Users</span>
-                            </Link>
+                            </NavLink>
 
                         </>
                     }
 
                     {
                         singleUser.role === 'seller' && <>
+                            <NavLink
+                                to="/dashboard/"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
+                            >
+                                <FaRegHourglass />
+                                <span className="mx-4 font-medium">My Orders </span>
+                            </NavLink>
 
-                            <Link
+                            <NavLink
                                 to='/dashboard/myAllProducts'
-                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
                                 <FaDatabase />
 
                                 <span className="mx-4 font-medium">My All Product</span>
-                            </Link>
-                            <Link
+                            </NavLink>
+                            <NavLink
                                 to='/dashboard/addProduct'
-                                className="flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
                                 <FaPlus className="" />
 
                                 <span className="mx-4 font-medium">Add Product</span>
-                            </Link>
+                            </NavLink>
 
-                            <Link
+                            <NavLink
                                 to='/dashboard/reportedProducts'
-                                className="flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                                className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                             >
-                                <MdOutlineReportProblem />
+                                <MdReport />
 
                                 <span className="mx-4 font-medium">Reported Products </span>
-                            </Link>
+                            </NavLink>
 
                         </>
                     }
 
 
                     {
-                        singleUser.role === 'buyer' && <> <Link
+                        singleUser.role === 'buyer' &&
+                        <> <NavLink
                             to="/dashboard/"
-                            className="flex items-center px-4 py-2 mt-4 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700"
+                            className={({ isActive }) => isActive ? 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform bg-white' : 'flex items-center px-4 py-2 mt-1 text-gray-600 transition-colors duration-300 transform  hover:bg-white hover:text-gray-700'}
                         >
                             <FaRegHourglass />
                             <span className="mx-4 font-medium">My Orders </span>
-                        </Link></>
+                        </NavLink></>
                     }
                 </nav>
             </div>

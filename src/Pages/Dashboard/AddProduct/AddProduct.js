@@ -6,10 +6,12 @@ import toast from 'react-hot-toast';
 import { FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../../Hooks/useTitle';
 import Loader from '../../Shared/Loader/Loader';
 
 const AddProduct = () => {
     const { user, setLoading } = useContext(AuthContext)
+    useTitle('Add Product')
     const navigate = useNavigate()
     const { data: categories, isLoading } = useQuery({
         queryKey: ['categories'],
@@ -30,8 +32,7 @@ const AddProduct = () => {
     const currentDate = formatDate(new Date());
 
     const handleAddProduct = data => {
-
-        // setLoading(true)
+        setLoading(true)
         const formData = new FormData()
         formData.append('image', data.productImage[0])
         fetch(`https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_ImageKey}`, { method: 'POST', body: formData }).then(res => res.json()).then(img => {
@@ -42,24 +43,27 @@ const AddProduct = () => {
                     categoryName: data.category,
                     name: data.productName,
                     color: data.productColor,
-                    verified: "false",
                     brand: data.brand,
                     originalPrice: data.originalPrice,
                     reSalePrice: data.reSalePrice,
                     years_of_use: data.useOf,
                     location: data.location,
-                    role: 'Seller',
+                    condition: data.condition,
+                    description: data.description,
                     publishedDate: currentDate,
                     sellerEmail: user?.email,
                     sellerImage: user?.photoURL,
                     sellerName: user?.displayName,
                     picture: image,
+                    verified: "false",
+                    role: 'Seller',
+                    Status: 'Available'
+
                 }).then(res => {
                     if (res.data.acknowledged) {
-                        navigate('/dashboard/allProducts')
+                        navigate('/dashboard/myAllProducts')
                         setLoading(false)
-                        console.log(res);
-                        toast.success('success')
+                        toast.success('Product is added successfully.', { duration: 1500 })
                     }
                 }).catch(err => {
                     setLoading(false)
@@ -122,7 +126,7 @@ const AddProduct = () => {
                             )}
                         </div>
                         <div>
-                            <label className="" htmlFor="useOf">Uses Of ?</label>
+                            <label className="" htmlFor="useOf">Year Of Uses  </label>
                             <input id="useOf" type="number" placeholder='How many years uses ?' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"    {...register("useOf", {
                                 required: "Uses of is required", maxLength: {
                                     value: 2,
@@ -150,6 +154,24 @@ const AddProduct = () => {
                             {errors.brand && (
                                 <p className="text-red-500 font-semibold flex items-center gap-1 mt-1">
                                     <FaTimes />	{errors.brand?.message}
+                                </p>
+                            )}
+                        </div>
+                        <div>
+                            <label className="" htmlFor="condition">Condition </label>
+                            <input id="condition" placeholder='condition of product' type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"  {...register("condition", { required: "Condition is required" })} />
+                            {errors.condition && (
+                                <p className="text-red-500 font-semibold flex items-center gap-1 mt-1">
+                                    <FaTimes />	{errors.condition?.message}
+                                </p>
+                            )}
+                        </div>
+                        <div>
+                            <label className="" htmlFor="description">Description </label>
+                            <input id="description" placeholder='description of product' type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"  {...register("description", { required: "Description is required" })} />
+                            {errors.description && (
+                                <p className="text-red-500 font-semibold flex items-center gap-1 mt-1">
+                                    <FaTimes />	{errors.description?.message}
                                 </p>
                             )}
                         </div>
@@ -196,7 +218,7 @@ const AddProduct = () => {
                     </div>
 
                     <div className="flex justify-end mt-6">
-                        <button className="px-6 py-2 leading-5  transition-colors duration-200 transhtmlForm bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600">Save</button>
+                        <button className="px-6 py-2 leading-5  transition-colors duration-200 transhtmlForm bg-pink-500 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600"> Save</button>
                     </div>
                 </form>
             </section>

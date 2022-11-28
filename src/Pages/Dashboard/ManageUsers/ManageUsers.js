@@ -1,13 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { BsTrash } from 'react-icons/bs';
+import { MdOutlineAdminPanelSettings } from 'react-icons/md';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import SmallLoader from '../../Shared/Loader/SmallLoader';
+import useTitle from '../../../Hooks/useTitle';
 
 const ManageUsers = () => {
-    const { user } = useContext(AuthContext)
+    const { user, setLoading } = useContext(AuthContext)
+    useTitle('Manage All Users')
     const [removeUser, setRemoveUser] = useState(null)
     const { data: users, isLoading, refetch } = useQuery({
         queryKey: ['users'],
@@ -21,6 +24,7 @@ const ManageUsers = () => {
     })
 
     const handleRemoveUser = () => {
+        setLoading(true)
         fetch(`${process.env.REACT_APP_ApiUrl}users/${removeUser?._id}?email=${user?.email}`, {
             method: 'DELETE',
             headers: {
@@ -28,6 +32,7 @@ const ManageUsers = () => {
             },
         }).then(res => res.json()).then(result => {
             if (result.acknowledged) {
+                setLoading(false)
                 toast.success(`${removeUser?.name} deleted successfully.`, { duration: 3000 })
                 refetch()
             }
@@ -54,6 +59,7 @@ const ManageUsers = () => {
                         <tr>
                             <th >SL</th>
                             <th>Name</th>
+                            <th>MakeAdmin</th>
                             <th>Role</th>
                             <th>Action</th>
                             <th></th>
@@ -76,6 +82,7 @@ const ManageUsers = () => {
                                         </div>
                                     </div>
                                 </td>
+                                <td> {person?.role === "Admin" ? <MdOutlineAdminPanelSettings title='Admin' className='sm:text-2xl text-xl  ' /> : <button className='btn btn-sm border-none '>Admin</button>}</td>
                                 <td> {person?.role}</td>
                                 <td> <label htmlFor="confirm-modal"><BsTrash title='remove user' onClick={() => setRemoveUser(person)} className='cursor-pointer text-red-500 text-lg' /></label></td>
 

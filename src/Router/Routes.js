@@ -18,7 +18,6 @@ import Home from "../Pages/Home/Home/Home";
 import SignIn from "../Pages/Login/SignIn/Signin";
 import SignUp from "../Pages/Login/SignUp/Signup";
 import AdminRoute from "./AdminRoute";
-import BuyerRoute from "./BuyerRoute";
 import PrivateRouter from "./PrivateRouter";
 import SellerRoute from "./SellerRoute";
 
@@ -30,7 +29,7 @@ const router = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Home /> },
 			{ path: "/home", element: <Home /> },
-			{ path: "/furnitures/:id", element: <Furnitures />, loader: async ({ params }) => fetch(`${process.env.REACT_APP_ApiUrl}categoriesProducts/${params.id}`) },
+			{ path: "/furnitures/:id", element: <PrivateRouter><Furnitures /></PrivateRouter>, loader: async ({ params }) => fetch(`${process.env.REACT_APP_ApiUrl}categoriesProducts/${params.id}`) },
 			{ path: "/singleFurniture/:id", element: <SingleFurniture />, loader: async ({ params }) => fetch(`${process.env.REACT_APP_ApiUrl}furnitures/${params.id}`) },
 			{ path: "/blog", element: <Blog /> },
 			{ path: "/signup", element: <SignUp /> },

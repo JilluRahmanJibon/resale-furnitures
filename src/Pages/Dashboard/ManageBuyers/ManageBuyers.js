@@ -1,13 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { BsTrash } from 'react-icons/bs';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import SmallLoader from '../../Shared/Loader/SmallLoader';
+import useTitle from '../../../Hooks/useTitle';
 
 const ManageBuyers = () => {
-    const { user } = useContext(AuthContext)
+    const { user, setLoading } = useContext(AuthContext)
+    useTitle('Manage Buyers')
     const [removeUser, setRemoveUser] = useState(null)
     const { data: buyers, isLoading, refetch } = useQuery({
         queryKey: ['users/sellers'],
@@ -18,6 +20,7 @@ const ManageBuyers = () => {
         }).then(res => res.json())
     })
     const handleRemoveUser = () => {
+        setLoading(true)
         fetch(`${process.env.REACT_APP_ApiUrl}users/${removeUser?._id}`, {
             method: 'DELETE',
             headers: {
@@ -25,9 +28,10 @@ const ManageBuyers = () => {
             }
         }).then(res => res.json()).then(result => {
             if (result.acknowledged) {
+
+                setLoading(false)
                 toast.success(`${removeUser?.name} deleted successfully.`, { duration: 3000 })
                 refetch()
-
             }
         })
     }

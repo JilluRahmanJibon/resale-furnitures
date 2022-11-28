@@ -12,9 +12,10 @@ import {
 import app from "../../firebase/firebase.config";
 import Loader from "../../Pages/Shared/Loader/Loader";
 export const AuthContext = createContext();
+export const CategoryContext = createContext();
 const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
-	// user manage state 
+	const [category, setCategory] = useState('')
 	// user state
 	const [user, setUser] = useState(null);
 	// loading state
@@ -73,7 +74,11 @@ const AuthProvider = ({ children }) => {
 	return (
 		<div>
 			{loading && <Loader />}
-			<AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+			<AuthContext.Provider value={authInfo}>
+				<CategoryContext.Provider value={{ category, setCategory }}>
+					{children}
+				</CategoryContext.Provider>
+			</AuthContext.Provider>
 		</div>
 	);
 };

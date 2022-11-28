@@ -6,8 +6,9 @@ import useTitle from '../../../Hooks/useTitle';
 import SmallLoader from '../../Shared/Loader/SmallLoader';
 import { BsTrash } from 'react-icons/bs'
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
+import { Link } from 'react-router-dom'
 const MyOrders = () => {
-    const { user } = useContext(AuthContext)
+    const { user, setLoading } = useContext(AuthContext)
     useTitle("My Orders ")
     const [removeCardProduct, setRemoveCardProduct] = useState(null)
     const { data: orders, isLoading, refetch } = useQuery({
@@ -20,8 +21,8 @@ const MyOrders = () => {
 
         }).then(res => res.json())
     })
-
     const handleRemoveCardProduct = () => {
+        setLoading(true)
         fetch(`${process.env.REACT_APP_ApiUrl}orders/${removeCardProduct?._id}`, {
             method: 'DELETE',
             headers: {
@@ -29,30 +30,30 @@ const MyOrders = () => {
             },
         }).then(res => res.json()).then(result => {
             if (result.acknowledged) {
-                toast.success(`${removeCardProduct?.productName} deleted successfully.`, { duration: 3000 })
+                setLoading(false)
+                toast.success(`"${removeCardProduct?.productName}" deleted successfully.`, { duration: 2000 })
                 refetch()
             }
             else {
-                toast.error(`${result.message}.`, { duration: 3000 })
+                toast.error(`${result.message}.`, { duration: 2000 })
             }
         })
     }
     const closeModal = () => {
         setRemoveCardProduct(null)
     }
-
     if (isLoading) {
         return <SmallLoader />
     }
     return (
         <div>
-            {orders?.length > 0 ? <> <h1 className='text-3xl font-bold pb-5'>My All Orders : {orders?.length}</h1>
+            {orders?.length > 0 ? <> <h1 className='text-3xl font-bold pb-5'>My Orders : {orders?.length}</h1>
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
 
                         <thead>
                             <tr>
-                                <th >SL</th>
+                                <th>SL</th>
                                 <th>Product</th>
                                 <th>OrderDate</th>
                                 <th>Price</th>
@@ -73,7 +74,7 @@ const MyOrders = () => {
                                             </div>
                                             <div>
                                                 <div title='product Name' className="font-bold">{order?.productName}</div>
-                                                <div title='My Email' className="text-sm opacity-50">{order?.buyerEmail}</div>
+                                                <div title='Seller Email' className="text-sm opacity-50">{order?.sellerEmail}</div>
                                             </div>
                                         </div>
                                     </td>
@@ -81,7 +82,7 @@ const MyOrders = () => {
 
                                     <td> ${order?.price}</td>
                                     <td> <label htmlFor="confirm-modal"><BsTrash title='remove product' onClick={() => setRemoveCardProduct(order)} className='cursor-pointer text-red-500 text-lg' /></label></td>
-                                    <td> <button className='bg-primary btn btn-sm border-none text-black hover:text-white'>Pay</button></td>
+                                    <td> {order?.price === 'paid' ? 'Paid' : <div className='flex items-center gap-2'><p className='italic font-semibold text-sm'>Pending</p> <button className='bg-primary btn btn-sm border-none text-black hover:text-white'>Pay</button></div>}</td>
                                 </tr>)
                             }
 
@@ -92,7 +93,12 @@ const MyOrders = () => {
 
                     </table>
                 </div>
-                {removeCardProduct && <ConfirmationModal successAction={handleRemoveCardProduct} closeModal={closeModal} title={`Are you sure You want to delete?`} message={`If you want to delete "${removeCardProduct.productName}". It can't be recover.`} />}</> : <h1 className='sm:text-4xl text-2xl lg:pt-12 text-center lg:text-left pt-10 lg:pl-8 font-semibold text-red-500'>No Order were Found !</h1>}
+                {removeCardProduct && <ConfirmationModal successAction={handleRemoveCardProduct} closeModal={closeModal} title={`Are you sure You want to delete?`} message={`If you want to delete "${removeCardProduct.productName}". It can't be recover.`} />}</> :
+                <div className="flex flex-col items-center justify-center">
+                    <h1 className='sm:text-4xl text-2xl lg:pt-12 text-center lg:text-left pt-10 lg:pl-8 font-semibold text-red-500'>Order were Not Found !</h1>
+                    <Link className="underline" to='/'>Get Products</Link>
+                </div>
+            }
         </div>
     );
 };

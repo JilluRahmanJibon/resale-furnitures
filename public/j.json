@@ -1,6 +1,7 @@
 [
 	{
 		"categoryName": "RoomCouch",
+		"Status": "Available",
 		"name": "gray Couch",
 		"color": "White",
 		"verified": "true",
@@ -18,6 +19,7 @@
 	},
 	{
 		"categoryName": "RoomCouch",
+		"Status": "Available",
 		"name": "gray Couch",
 		"color": "gray",
 		"verified": "true",
@@ -35,6 +37,7 @@
 	},
 	{
 		"categoryName": "RoomCouch",
+		"Status": "Available",
 		"name": "White Couch",
 		"color": "White",
 		"verified": "true",
@@ -52,6 +55,7 @@
 	},
 	{
 		"categoryName": "RoomCouch",
+		"Status": "Available",
 		"name": "Blue Couch",
 		"color": "blue",
 		"verified": "true",
@@ -69,6 +73,7 @@
 	},
 	{
 		"categoryName": "RoomCouch",
+		"Status": "Available",
 		"name": "gray Couch",
 		"color": "gray",
 		"verified": "true",
@@ -86,6 +91,7 @@
 	},
 	{
 		"categoryName": "RoomCouch",
+		"Status": "Available",
 		"name": "plastic Couch",
 		"color": "gray",
 		"verified": "true",
@@ -103,6 +109,7 @@
 	},
 	{
 		"categoryName": "Chair",
+		"Status": "Available",
 		"name": "plastic Chair",
 		"color": "black",
 		"verified": "true",
@@ -120,6 +127,7 @@
 	},
 	{
 		"categoryName": "Chair",
+		"Status": "Available",
 		"name": "plastic Chair",
 		"color": "white",
 		"verified": "true",
@@ -137,6 +145,7 @@
 	},
 	{
 		"categoryName": "Chair",
+		"Status": "Available",
 		"name": "plastic Chair",
 		"color": "black",
 		"verified": "true",
@@ -154,6 +163,7 @@
 	},
 	{
 		"categoryName": "Chair",
+		"Status": "Available",
 		"name": "Pome Chair",
 		"color": "blue",
 		"verified": "true",
@@ -171,6 +181,7 @@
 	},
 	{
 		"categoryName": "Chair",
+		"Status": "Available",
 		"name": "yellow",
 		"color": "yellow",
 		"verified": "true",
@@ -188,6 +199,7 @@
 	},
 	{
 		"categoryName": "Chair",
+		"Status": "Available",
 		"name": "Round Chair",
 		"color": "gray",
 		"verified": "true",
@@ -205,6 +217,7 @@
 	},
 	{
 		"categoryName": "OfficeChair",
+		"Status": "Available",
 		"name": "Office Chair",
 		"color": "yellow",
 		"verified": "true",
@@ -222,6 +235,7 @@
 	},
 	{
 		"categoryName": "OfficeChair",
+		"Status": "Available",
 		"name": "plastic Office Chair",
 		"color": "gray",
 		"verified": "true",
@@ -239,6 +253,7 @@
 	},
 	{
 		"categoryName": "OfficeChair",
+		"Status": "Available",
 		"name": "yellow Chair",
 		"color": "black",
 		"verified": "true",
@@ -256,6 +271,7 @@
 	},
 	{
 		"categoryName": "OfficeChair",
+		"Status": "Available",
 		"name": "gaming Chair",
 		"color": "black",
 		"verified": "true",
@@ -273,6 +289,7 @@
 	},
 	{
 		"categoryName": "OfficeChair",
+		"Status": "Available",
 		"name": "personal chair",
 		"color": "black",
 		"verified": "true",
@@ -290,6 +307,7 @@
 	},
 	{
 		"categoryName": "OfficeChair",
+		"Status": "Available",
 		"name": "dining Chair",
 		"color": "black",
 		"verified": "true",
@@ -307,6 +325,7 @@
 	},
 	{
 		"categoryName": "Bookcase",
+		"Status": "Available",
 		"name": "Bookcase",
 		"color": "",
 		"verified": "true",
@@ -324,6 +343,7 @@
 	},
 	{
 		"categoryName": "Bookcase",
+		"Status": "Available",
 		"name": "Bookcase",
 		"color": "gray",
 		"verified": "true",
@@ -341,6 +361,7 @@
 	},
 	{
 		"categoryName": "Bookcase",
+		"Status": "Available",
 		"name": "Bookcase",
 		"color": "white",
 		"verified": "true",
@@ -358,6 +379,7 @@
 	},
 	{
 		"categoryName": "Bookcase",
+		"Status": "Available",
 		"name": "Bookcase",
 		"color": "white",
 		"verified": "true",
@@ -375,6 +397,7 @@
 	},
 	{
 		"categoryName": "Bookcase",
+		"Status": "Available",
 		"name": "Bookcase",
 		"color": "white",
 		"verified": "true",
@@ -392,6 +415,7 @@
 	},
 	{
 		"categoryName": "Bookcase",
+		"Status": "Available",
 		"name": "Bookcase",
 		"color": "white",
 		"verified": "true",
@@ -409,6 +433,7 @@
 	},
 	{
 		"categoryName": "Wardrobe",
+		"Status": "Available",
 		"name": "Wardrobe",
 		"color": "white",
 		"verified": "true",
@@ -426,6 +451,7 @@
 	},
 	{
 		"categoryName": "Wardrobe",
+		"Status": "Available",
 		"name": "Wardrobe",
 		"color": "gray",
 		"verified": "true",
@@ -443,6 +469,7 @@
 	},
 	{
 		"categoryName": "Wardrobe",
+		"Status": "Available",
 		"name": "Wardrobe",
 		"color": "white",
 		"verified": "true",
@@ -460,6 +487,7 @@
 	},
 	{
 		"categoryName": "Wardrobe",
+		"Status": "Available",
 		"name": "Wardrobe",
 		"color": "white",
 		"verified": "true",
@@ -477,6 +505,7 @@
 	},
 	{
 		"categoryName": "Wardrobe",
+		"Status": "Available",
 		"name": "Wardrobe",
 		"color": "white",
 		"verified": "true",
@@ -494,6 +523,7 @@
 	},
 	{
 		"categoryName": "Wardrobe",
+		"Status": "Available",
 		"name": "Wardrobe",
 		"color": "black",
 		"verified": "true",
@@ -511,6 +541,7 @@
 	},
 	{
 		"categoryName": "Table",
+		"Status": "Available",
 		"name": "Coffee table",
 		"color": "different color",
 		"verified": "true",
@@ -528,6 +559,7 @@
 	},
 	{
 		"categoryName": "Table",
+		"Status": "Available",
 		"name": "Coffee table",
 		"color": "white",
 		"verified": "true",
@@ -545,6 +577,7 @@
 	},
 	{
 		"categoryName": "Table",
+		"Status": "Available",
 		"name": "Coffee table",
 		"color": "white",
 		"verified": "true",
@@ -562,6 +595,7 @@
 	},
 	{
 		"categoryName": "Table",
+		"Status": "Available",
 		"name": "Coffee table",
 		"color": "white",
 		"verified": "true",
@@ -579,6 +613,7 @@
 	},
 	{
 		"categoryName": "Table",
+		"Status": "Available",
 		"name": "Coffee table",
 		"color": "black",
 		"verified": "true",
@@ -596,6 +631,7 @@
 	},
 	{
 		"categoryName": "Table",
+		"Status": "Available",
 		"name": "Coffee table",
 		"color": "white",
 		"verified": "true",

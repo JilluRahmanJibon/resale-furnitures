@@ -7,13 +7,12 @@ import person from '../../../Pages/assets/icons/person.svg'
 const Navbar = () => {
 	const { user, userLogOut } = useContext(AuthContext);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [dashboardOpen, setDashboardOpen] = useState(false)
 	return (
 		<div>
 			<div className="">
 				<div className="px-4 py-5 mx-auto  md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
 					<div className="relative flex items-center gap-3 justify-between">
-						<label onClick={() => setDashboardOpen(!dashboardOpen)} htmlFor="dashboard-drawer" className=" lg:hidden">{dashboardOpen ? <FaTimes className="text-xl mb-1" /> : <FaBars className="text-xl mb-1" />}</label>
+						{user?.email && <label tabIndex={0} htmlFor="dashboard-drawer" className=" lg:hidden"><FaBars className="text-xl mb-1" /></label>}
 						<div className="lg:w-0 w-full">
 							<Link
 								to="/"
@@ -74,9 +73,20 @@ const Navbar = () => {
 							<button
 								aria-label="Open Menu"
 								title="Open Menu"
-								className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
+								className=" -mr-1 w-12 h-12 transition duration-200 rounded-full focus:outline-none focus:shadow-outline"
 								onClick={() => setIsMenuOpen(true)}>
-								<FaBars className="text-lg " />
+								{user?.email ? (
+									<img
+										title={user?.displayName}
+										className=" border-2 border-red-500 w-12 h-12  cursor-pointer rounded-full"
+										src={user?.photoURL}
+										alt=""
+									/>
+								) : (
+									<>
+										<img className=" cursor-pointer border-2 border-red-500 rounded-full w-12 h-12" src={person} alt="" />
+									</>
+								)}
 							</button>
 							{isMenuOpen && (
 								<div className="absolute top-0 left-0 w-full">
@@ -184,7 +194,7 @@ const Navbar = () => {
 								</div>
 							)}
 						</div>
-						<ul className="flex items-center  space-x-8 lg:flex">
+						<ul className="lg:flex items-center hidden  space-x-8 ">
 							{user?.email ? (
 								<div className="flex gap-2 items-center ">
 									{" "}

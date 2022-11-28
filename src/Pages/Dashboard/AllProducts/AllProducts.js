@@ -5,9 +5,11 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import SmallLoader from '../../Shared/Loader/SmallLoader';
 import { BsTrash } from 'react-icons/bs';
 import ConfirmationModal from '../../Shared/ConfirmationModal/ConfirmationModal';
+import useTitle from '../../../Hooks/useTitle';
 
 const AllProducts = () => {
     const { user } = useContext(AuthContext)
+    useTitle('All Products')
     const [removeProduct, setRemoveProduct] = useState(null)
     const { data: furnitures, isLoading, refetch } = useQuery({
         queryKey: ['furnitures'],
@@ -37,10 +39,10 @@ const AllProducts = () => {
         setRemoveProduct(null)
     }
 
+
     if (isLoading) {
         return <SmallLoader />
     }
-
     return (
         <div>
             <h1 className='text-3xl font-bold pb-5'>All Products: {furnitures?.length}</h1>
@@ -50,7 +52,8 @@ const AllProducts = () => {
                     <thead>
                         <tr>
                             <th >SL</th>
-                            <th>Product</th>
+                            <th>Products</th>
+                            <th>Status</th>
                             <th>Category</th>
                             <th> OriginalPrice</th>
                             <th>ResalePrice</th>
@@ -74,6 +77,7 @@ const AllProducts = () => {
                                         </div>
                                     </div>
                                 </td>
+                                <td> {furniture?.Status}</td>
                                 <td> {furniture?.categoryName}</td>
                                 <td> ${furniture?.originalPrice}</td>
                                 <td> ${furniture?.reSalePrice}</td>
