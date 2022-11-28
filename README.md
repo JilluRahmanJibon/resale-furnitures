@@ -1,10 +1,10 @@
-# BengalFurniture
+# ResaleFurniture
 
-# Welcome to Our BengalFurniture eCommerce Website
+# Welcome to Our ResaleFurniture eCommerce Website
 
-## BengalFurniture Live WebSite Link: https://regal-furniture-ab3ef.web.app
+## ResaleFurniture Live WebSite Link: https://regal-furniture-ab3ef.web.app
 
-BengalFurniture is a cloud-enabled, mobile-ready
+ResaleFurniture is a cloud-enabled, mobile-ready
 In this website ReactJS-powered Tailwind Css are used.
 
 - Click On THE LINK
@@ -30,10 +30,21 @@ Dev Goal: Review...
 ### Some features of my project:
 
 1. This site is responsive for mobile and Desktop.
-2. You can add your Review and update or deleted.
+2. You can add your product and update or deleted.
 3. You can add lots of products and etc.
+4. You can buy here
+5. Or You can payment here
+6. Here is lots of features of you.
 
 ---
+
+### Some function of my project:
+
+1. Every user can get equal rights
+2. Extremely damaged products is prohibited
+3. Don't spam
+4. To explore new sites of e-commerce
+5. Customer satisfaction
 
 ## How To Use
 
@@ -41,9 +52,14 @@ Just Click the link 👉 https://regal-furniture-ab3ef.web.app .
 
 ---
 
+## Admin
+
+user: jibon@gmail.com
+pass: Jibon@5
+
 ## Installation
 
-BengalFurniture requires [Node.js](https://nodejs.org/) , React Js , Router, React-Icons to run.
+ResaleFurniture requires [Node.js](https://nodejs.org/) , React Js , Router, React-Icons to run.
 
 Install the dependencies and devDependencies and start the server.
 

@@ -42,11 +42,13 @@ const ManageSellers = () => {
 
     const handleVerified = (email) => {
         setLoading(true)
-        axios.put(`${process.env.REACT_APP_ApiUrl}users/${email}`, {
-            verified: 'true'
-        }).then(res => {
-            console.log(res);
-            if (res.data?.acknowledged) {
+        fetch(`${process.env.REACT_APP_ApiUrl}users/${email}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('access-token')}`
+            },
+        }).then(res => res.json()).then(data => {
+            if (data?.acknowledged) {
                 setLoading(false)
                 refetch()
             }
