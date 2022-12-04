@@ -7,15 +7,14 @@ import CheckoutForm from './CheckoutForm';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PK);
 const Payment = () => {
     const order = useLoaderData()
-    const { name, price } = order
+    const { productName, price } = order
     const navigation = useNavigation()
     if (navigation.state === "loading") {
         return <SmallLoader></SmallLoader>;
     }
-    console.log(order);
     return (
         <div>
-            <h3 className="text-3xl">Payment for {name}</h3>
+            <h3 className="text-3xl">Payment for {productName}</h3>
             <p className="text-xl">
                 Please pay <strong>${price}</strong>
 

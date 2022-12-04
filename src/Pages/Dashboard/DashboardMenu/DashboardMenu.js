@@ -20,11 +20,11 @@ const DashboardMenu = ({ singleUser }) => {
             <div className="flex flex-col border-b pb-3 items-center mt-6 -mx-2">
                 <div className="relative ">
                     <img
-                        className="object-cover w-24 h-24 mx-2 rounded-full"
+                        className="object-cover border-2 border-gray-200 w-24 h-24 mx-2 rounded-full"
                         src={user?.photoURL}
                         alt="avatar"
                     />
-                    {singleUser?.verified === 'true' && <img title='This Seller is Verified' className='absolute w-4 h-4   right-3  rounded-full bottom-2' src={verifyLogo} alt="" />}
+                    {singleUser?.verified === 'true' && <img title='This Seller is Verified' className='absolute w-4 h-4 right-3  rounded-full bottom-2' src={verifyLogo} alt="" />}
 
                     <p className='text-xl text-center font-bold'>{singleUser?.role}</p>
                 </div>

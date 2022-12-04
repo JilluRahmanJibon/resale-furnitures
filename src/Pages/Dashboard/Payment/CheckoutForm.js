@@ -1,4 +1,5 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const CheckoutForm = ({ order }) => {
@@ -10,7 +11,7 @@ const CheckoutForm = ({ order }) => {
 
     const stripe = useStripe();
     const elements = useElements();
-    const { price, email, name, _id } = order;
+    const { price, email, productName, _id, productId } = order;
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
@@ -25,7 +26,7 @@ const CheckoutForm = ({ order }) => {
             .then((res) => res.json())
             .then((data) => setClientSecret(data.clientSecret));
     }, [price]);
-
+    console.log(order);
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -58,7 +59,7 @@ const CheckoutForm = ({ order }) => {
                 payment_method: {
                     card: card,
                     billing_details: {
-                        name: name,
+                        name: productName,
                         email: email
                     },
                 },
@@ -90,8 +91,17 @@ const CheckoutForm = ({ order }) => {
                 .then(data => {
                     console.log(data);
                     if (data.insertedId) {
-                        setSuccess('Congrats! your payment completed');
-                        setTransactionId(paymentIntent.id);
+                        axios.put(`${process.env.REACT_APP_ApiUrl}furnitures/${productId}`, {
+                            Status: 'sold'
+                        }).then(res => {
+                            console.log(res);
+                            if (res.data?.acknowledged) {
+                                setSuccess('Congrats! your payment completed');
+                                setTransactionId(paymentIntent.id);
+                                
+
+                            }
+                        })
                     }
                 })
         }

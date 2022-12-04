@@ -41,16 +41,7 @@ const OrderModal = ({ selectOrder, setSelectOrder }) => {
             productImage: picture,
         }).then(res => {
             if (res.data.acknowledged) {
-                setLoading(true)
-                axios.put(`${process.env.REACT_APP_ApiUrl}furnitures/${_id}`, {
-                    Status: 'sold'
-                }).then(res => {
-                    console.log(res);
-                    if (res.data?.acknowledged) {
-                        setLoading(false)
-
-                    }
-                })
+                setLoading(false)
                 toast.success('Your order is Confirmed', { duration: 1500 })
                 setSelectOrder(null);
 

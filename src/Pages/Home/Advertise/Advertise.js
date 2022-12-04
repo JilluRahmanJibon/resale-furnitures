@@ -15,12 +15,12 @@ const Advertise = ({ setSelectOrder }) => {
     }
     return (
         <div> {advertise?.length > 0 && <>
-            <h1 className='pb-5 text-3xl font-semibold pl-2 border-t pt-5'>Advertise Products</h1>
+            <h1 className='pb-5 text-3xl font-semibold pl-2 border-t pt-5 text-center'>Advertise Products</h1>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 mb-12 gap-5'>
-                {advertise?.map(furniture => {
+                {advertise?.map((furniture, idx) => {
                     const { color, location, verified, publishedDate, name, picture, reSalePrice, originalPrice, sellerEmail, sellerName, sellerImage, years_of_use, brand, description, condition } = furniture
                     return (
-                        <div className=" rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
+                        <div key={idx} className=" rounded-md shadow-md dark:bg-gray-900 dark:text-gray-100">
                             <img title='Click for View full Image' src={picture} alt="" className="object-cover object-center w-full rounded-t-md h-72 " />
 
                             <div className='sm:text-[13px] text-[12px] flex flex-col gap-1 mt-2 font-semibold'>

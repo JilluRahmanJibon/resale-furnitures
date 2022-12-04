@@ -50,7 +50,7 @@ const router = createBrowserRouter([
 			{ path: '/dashboard/reportedProducts', element: <SellerRoute><ReportedProducts /></SellerRoute> },
 			{ path: '/dashboard/addProduct', element: <SellerRoute><AddProduct /></SellerRoute> },
 			{ path: '/dashboard/', element: <MyOrders /> },
-			{ path: '/dashboard/payment/:id', element: <Payment />, loader: async ({ params }) => fetch(`${process.env.REACT_APP_ApiUrl}singleOrder/${params.id}`) },
+			{ path: '/dashboard/payment/:id', element: <PrivateRouter><Payment /></PrivateRouter>, loader: async ({ params }) => fetch(`${process.env.REACT_APP_ApiUrl}singleOrder/${params.id}`) },
 			{ path: '/dashboard/myAllProducts', element: <SellerRoute><MyAllProducts /> </SellerRoute> },
 		]
 	}

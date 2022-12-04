@@ -1,32 +1,24 @@
 [
 	{
-		"picture": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80&fbclid=IwAR1JD0lDSKWWrF-ryecvNMz0MqY4ftxfpMKRM4ySYo3XmsKzoIazax7GL8Q",
+		"picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStbno3cTLrPgaeDhzFLmKWfWxevA2juaY2CPc8PPLQBw&s",
 		"name": "ROOM COUCH",
 		"categoryName": "RoomCouch"
 	},
 	{
-		"picture": "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
+		"picture": "https://static-01.daraz.com.bd/p/9df5cd61c4e472a3373e6c1d0b9efd5d.jpg",
 		"name": "Chair",
 		"categoryName": "Chair"
 	},
+	 
 	{
-		"picture": "https://images.unsplash.com/photo-1519947486511-46149fa0a254?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-		"name": "Office chair",
-		"categoryName": "OfficeChair"
-	},
-	{
-		"picture": "https://images.unsplash.com/photo-1543248939-4296e1fea89b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+		"picture": "https://ak1.ostkcdn.com/images/products/is/images/direct/8f68f2f79c81644ab733bdd4626cda3a2c49d070/47-inch-Bookcase-Bookshelf-Storage-Rack-Standing-Shelf.jpg",
 		"name": "Bookcase",
 		"categoryName": "Bookcase"
 	},
 
+ 
 	{
-		"picture": "https://images.unsplash.com/photo-1643949914877-b20f30792c1e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
-		"name": "Wardrobe",
-		"categoryName": "Wardrobe"
-	},
-	{
-		"picture": "https://images.unsplash.com/photo-1604061986761-d9d0cc41b0d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80",
+		"picture": "https://upload.wikimedia.org/wikipedia/commons/7/7f/4Coffee_Table.jpg",
 		"name": "Coffee table",
 		"categoryName": "Table"
 	}

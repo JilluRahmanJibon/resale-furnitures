@@ -88,8 +88,8 @@ const AddProduct = () => {
                 <form onSubmit={handleSubmit(handleAddProduct)}>
                     <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                         <div>
-                            <label className="" htmlFor="Name">Name</label>
-                            <input id="Name" type="text" placeholder='Product Name' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" {...register("productName", { required: "Product Name is required" })} />
+                            <label className="" htmlFor="Name">Product Title</label>
+                            <input maxLength='40' id="Name" type="text" placeholder='Product Name' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" {...register("productName", { required: "Product Name is required" })} />
                             {errors.productName && (
                                 <p className="text-red-500 font-semibold flex items-center gap-1 mt-1">
                                     <FaTimes />	{errors.productName?.message}
@@ -127,11 +127,15 @@ const AddProduct = () => {
                         </div>
                         <div>
                             <label className="" htmlFor="useOf">Year Of Uses  </label>
-                            <input id="useOf" type="number" placeholder='How many years uses ?' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"    {...register("useOf", {
-                                required: "Uses of is required", maxLength: {
-                                    value: 2,
-                                },
-                            })} />
+                            <select id="useOf" type="number" placeholder='How many years uses ?' className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"    {...register("useOf", {
+                                required: "Uses of is required",
+                            })} >
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                            </select>
                             {errors.useOf && (
                                 <p className="text-red-500 font-semibold flex items-center gap-1 mt-1">
                                     <FaTimes />	{errors.useOf?.message}
@@ -157,9 +161,14 @@ const AddProduct = () => {
                                 </p>
                             )}
                         </div>
+
                         <div>
                             <label className="" htmlFor="condition">Condition </label>
-                            <input id="condition" placeholder='condition of product' type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"  {...register("condition", { required: "Condition is required" })} />
+                            <select id="condition" placeholder='condition of product' type="text" className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md  dark:text-gray-600 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"  {...register("condition", { required: "Condition is required" })} >
+                                <option value="Excellent">Excellent</option>
+                                <option value="Fear">Fear </option>
+                                <option value="Good">Good</option>
+                            </select>
                             {errors.condition && (
                                 <p className="text-red-500 font-semibold flex items-center gap-1 mt-1">
                                     <FaTimes />	{errors.condition?.message}

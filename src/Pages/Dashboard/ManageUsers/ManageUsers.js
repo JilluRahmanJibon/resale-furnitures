@@ -48,7 +48,9 @@ const ManageUsers = () => {
     if (isLoading) {
         return <SmallLoader />
     }
-
+    const handleMakeAdmin = () => {
+        toast.error('Sorry this feature are not available at the moment, it will be add very soon..thanks', { duration: 3000 })
+    }
     return (
         <div>
             <h1 className='text-3xl font-bold pb-5'>Manage All Users </h1>
@@ -82,7 +84,7 @@ const ManageUsers = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td> {person?.role === "Admin" ? <MdOutlineAdminPanelSettings title='Admin' className='sm:text-2xl text-xl  ' /> : <button className='btn btn-sm border-none '>Admin</button>}</td>
+                                <td> {person?.role === "Admin" ? <MdOutlineAdminPanelSettings title='Admin' className='sm:text-2xl text-xl  ' /> : <button onClick={handleMakeAdmin} className='btn btn-sm border-none '>Admin</button>}</td>
                                 <td> {person?.role}</td>
                                 <td> <label htmlFor="confirm-modal"><BsTrash title='remove user' onClick={() => setRemoveUser(person)} className='cursor-pointer text-red-500 text-lg' /></label></td>
 
